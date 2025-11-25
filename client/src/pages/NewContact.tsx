@@ -102,16 +102,16 @@ export default function NewContact() {
         <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 pointer-events-none select-none">
           <div className="absolute inset-0 animate-pulse" style={{ animationDelay: '0.5s' }}>
             <svg className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50%" cy="50%" r="35%" className="stroke-primary/10" strokeWidth="1" />
-              <circle cx="50%" cy="50%" r="25%" className="stroke-primary/10" strokeWidth="1" />
+              <circle cx="50%" cy="50%" r="35%" className="stroke-secondary/10" strokeWidth="1" />
+              <circle cx="50%" cy="50%" r="25%" className="stroke-secondary/10" strokeWidth="1" />
             </svg>
           </div>
-          <div className="absolute inset-[35%] rounded-full bg-primary/20 shadow-[0_0_30px_5px_hsl(var(--primary)/0.3)] animate-pulse">
-            <div className="absolute inset-4 rounded-full bg-primary/30 shadow-[inset_0_0_10px_hsl(var(--primary))] flex items-center justify-center text-primary font-bold text-3xl sm:text-4xl">AI</div>
+          <div className="absolute inset-[35%] rounded-full bg-gradient-to-br from-secondary/30 to-tertiary/20 shadow-[0_0_40px_8px_rgba(98,170,222,0.4)] animate-pulse border border-tertiary/30">
+            <div className="absolute inset-4 rounded-full bg-gradient-to-br from-secondary/40 to-tertiary/30 shadow-[inset_0_0_15px_rgba(98,170,222,0.5)] flex items-center justify-center text-tertiary font-bold text-3xl sm:text-4xl drop-shadow-[0_0_10px_rgba(98,170,222,0.6)]">AI</div>
           </div>
-          <div className="absolute inset-[20%] border border-primary/30 rounded-full" style={{ transform: 'rotateX(75deg)', animation: 'spin-horizontal 10s linear infinite' }} />
-          <div className="absolute inset-[20%] border border-primary/30 rounded-full" style={{ transform: 'rotateY(75deg)', animation: 'spin-vertical 12s linear infinite' }} />
-          <div className="absolute inset-0 border border-primary/20 rounded-full" style={{ animation: 'pulse-out 3s ease-out infinite' }} />
+          <div className="absolute inset-[20%] border border-tertiary/30 rounded-full" style={{ transform: 'rotateX(75deg)', animation: 'spin-horizontal 10s linear infinite' }} />
+          <div className="absolute inset-[20%] border border-tertiary/30 rounded-full" style={{ transform: 'rotateY(75deg)', animation: 'spin-vertical 12s linear infinite' }} />
+          <div className="absolute inset-0 border border-tertiary/25 rounded-full" style={{ animation: 'pulse-out 3s ease-out infinite' }} />
         </div>
       </div>
 
@@ -128,17 +128,17 @@ export default function NewContact() {
                 {/* Animated border glow with rotating conic gradient */}
                 <div className="absolute top-1/2 left-1/2 w-[200%] h-[400%]" style={{ background: 'conic-gradient(from 0deg at 50% 50%, rgba(98, 170, 222, 0.5), rgba(22, 55, 145, 0.3), rgba(98, 170, 222, 0.5))', animation: 'rotateBadgeBorder 4s linear infinite' }} />
                 {/* Badge container */}
-                <div className="relative flex items-center px-5 py-2.5 rounded-full border border-[#163791]/30 bg-zinc-900/90 backdrop-blur-sm shadow-lg shadow-black/50 z-10">
+                <div className="relative flex items-center px-5 py-2.5 rounded-full border border-secondary/30 bg-card/90 backdrop-blur-sm shadow-lg shadow-black/50 z-10">
                   {/* Sparkles icon */}
-                  <Sparkles className="w-4 h-4 mr-2 text-[#62AADE] drop-shadow-[0_0_4px_rgba(98,170,222,0.6)]" />
+                  <Sparkles className="w-4 h-4 mr-2 text-tertiary drop-shadow-[0_0_4px_rgba(98,170,222,0.6)]" />
                   {/* Badge text */}
-                  <span className="text-sm font-semibold tracking-wider uppercase text-[#efefef] drop-shadow-lg">
+                  <span className="text-sm font-semibold tracking-wider uppercase text-foreground drop-shadow-lg">
                     Get in Touch
                   </span>
                 </div>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-                Let's Start a <span className="text-primary">Conversation</span>
+                Let's Start a <span className="text-secondary">Conversation</span>
               </h1>
               <p className="text-lg text-muted-foreground md:px-12">
                 We're eager to understand your business challenges and explore how we can help. Let's connect and create something amazing together.
@@ -152,7 +152,7 @@ export default function NewContact() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="group relative h-full overflow-hidden border-[#163791]/20 bg-black/20 backdrop-blur-xl hover:border-[#163791]/30 hover:bg-black/30 transition-all duration-500">
+                <Card className="group relative h-full overflow-hidden border border-secondary/20 bg-card/20 backdrop-blur-xl hover:border-secondary/30 hover:bg-card/30 transition-all duration-500 shadow-lg shadow-black/50">
                   <CardHeader className="pb-6 relative">
                     <div className="mb-8 flex overflow-x-auto no-scrollbar">
                       {[
@@ -163,11 +163,10 @@ export default function NewContact() {
                         <button
                           key={tab.id}
                           onClick={() => setActiveTab(tab.id)}
-                          className={`px-4 py-2 mr-2 whitespace-nowrap rounded-full text-sm font-medium transition-all ${
-                            activeTab === tab.id
-                              ? "bg-[#163791] text-[#efefef]"
-                              : "bg-black/30 text-[#efefef]/70 hover:bg-black/40 border border-[#163791]/20"
-                          }`}
+                          className={`px-4 py-2 mr-2 whitespace-nowrap rounded-full text-sm font-medium transition-all ${activeTab === tab.id
+                              ? "bg-secondary text-secondary-foreground"
+                              : "bg-card/30 text-foreground/70 hover:bg-card/40 border border-secondary/20"
+                            }`}
                         >
                           {tab.label}
                         </button>
@@ -201,7 +200,7 @@ export default function NewContact() {
                             value={formValues.name}
                             onChange={handleChange}
                             required
-                            className="w-full bg-black/30 backdrop-blur-sm border border-[#163791]/20 rounded-lg px-4 py-3 text-[#efefef] placeholder-[#efefef]/50 focus:outline-none focus:ring-2 focus:ring-[#62AADE]/40 focus:border-[#62AADE]/40 focus:bg-black/40 transition-all"
+                            className="w-full bg-card/30 backdrop-blur-sm border border-secondary/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-tertiary/40 focus:border-tertiary/40 focus:bg-card/40 transition-all"
                             placeholder="Your full name"
                           />
                         </div>
@@ -217,7 +216,7 @@ export default function NewContact() {
                             value={formValues.email}
                             onChange={handleChange}
                             required
-                            className="w-full bg-black/30 backdrop-blur-sm border border-[#163791]/20 rounded-lg px-4 py-3 text-[#efefef] placeholder-[#efefef]/50 focus:outline-none focus:ring-2 focus:ring-[#62AADE]/40 focus:border-[#62AADE]/40 focus:bg-black/40 transition-all"
+                            className="w-full bg-card/30 backdrop-blur-sm border border-secondary/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-tertiary/40 focus:border-tertiary/40 focus:bg-card/40 transition-all"
                             placeholder="your.email@example.com"
                           />
                         </div>
@@ -232,7 +231,7 @@ export default function NewContact() {
                             name="company"
                             value={formValues.company}
                             onChange={handleChange}
-                            className="w-full bg-black/30 backdrop-blur-sm border border-[#163791]/20 rounded-lg px-4 py-3 text-[#efefef] placeholder-[#efefef]/50 focus:outline-none focus:ring-2 focus:ring-[#62AADE]/40 focus:border-[#62AADE]/40 focus:bg-black/40 transition-all"
+                            className="w-full bg-card/30 backdrop-blur-sm border border-secondary/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-tertiary/40 focus:border-tertiary/40 focus:bg-card/40 transition-all"
                             placeholder="Your company name"
                           />
                         </div>
@@ -247,7 +246,7 @@ export default function NewContact() {
                             name="phone"
                             value={formValues.phone}
                             onChange={handleChange}
-                            className="w-full bg-black/30 backdrop-blur-sm border border-[#163791]/20 rounded-lg px-4 py-3 text-[#efefef] placeholder-[#efefef]/50 focus:outline-none focus:ring-2 focus:ring-[#62AADE]/40 focus:border-[#62AADE]/40 focus:bg-black/40 transition-all"
+                            className="w-full bg-card/30 backdrop-blur-sm border border-secondary/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-tertiary/40 focus:border-tertiary/40 focus:bg-card/40 transition-all"
                             placeholder="+1 (555) 000-0000"
                           />
                         </div>
@@ -264,7 +263,7 @@ export default function NewContact() {
                               value={formValues.subject}
                               onChange={handleChange}
                               required={activeTab === "general"}
-                              className="w-full bg-black/30 backdrop-blur-sm border border-[#163791]/20 rounded-lg px-4 py-3 text-[#efefef] placeholder-[#efefef]/50 focus:outline-none focus:ring-2 focus:ring-[#62AADE]/40 focus:border-[#62AADE]/40 focus:bg-black/40 transition-all"
+                              className="w-full bg-card/30 backdrop-blur-sm border border-secondary/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-tertiary/40 focus:border-tertiary/40 focus:bg-card/40 transition-all"
                               placeholder="What is your inquiry about?"
                             />
                           </div>
@@ -281,7 +280,7 @@ export default function NewContact() {
                               value={formValues.service}
                               onChange={handleChange}
                               required={activeTab === "business" || activeTab === "support"}
-                              className="w-full bg-black/30 backdrop-blur-sm border border-[#163791]/20 rounded-lg px-4 py-3 text-[#efefef] appearance-none focus:outline-none focus:ring-2 focus:ring-[#62AADE]/40 focus:border-[#62AADE]/40 focus:bg-black/40 transition-all"
+                              className="w-full bg-card/30 backdrop-blur-sm border border-secondary/20 rounded-lg px-4 py-3 text-foreground appearance-none focus:outline-none focus:ring-2 focus:ring-tertiary/40 focus:border-tertiary/40 focus:bg-card/40 transition-all"
                             >
                               {activeTab === "business" && (
                                 <>
@@ -323,13 +322,13 @@ export default function NewContact() {
                             onChange={handleChange}
                             required
                             rows={5}
-                            className="w-full bg-black/30 backdrop-blur-sm border border-[#163791]/20 rounded-lg px-4 py-3 text-[#efefef] placeholder-[#efefef]/50 focus:outline-none focus:ring-2 focus:ring-[#62AADE]/40 focus:border-[#62AADE]/40 focus:bg-black/40 transition-all resize-none"
+                            className="w-full bg-card/30 backdrop-blur-sm border border-secondary/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-tertiary/40 focus:border-tertiary/40 focus:bg-card/40 transition-all resize-none"
                             placeholder={
                               activeTab === "general"
                                 ? "Tell us about your project, goals, and requirements..."
                                 : activeTab === "business"
-                                ? "Describe how you'd like to partner with us..."
-                                : "Please describe the issue you're experiencing in detail..."
+                                  ? "Describe how you'd like to partner with us..."
+                                  : "Please describe the issue you're experiencing in detail..."
                             }
                           />
                         </div>
@@ -344,17 +343,16 @@ export default function NewContact() {
                         <button
                           type="submit"
                           disabled={formStatus === "submitting" || formStatus === "success"}
-                          className={`group relative overflow-hidden px-6 py-3 rounded-lg font-medium text-primary-foreground transition-all ${
-                            formStatus === "submitting" || formStatus === "success"
+                          className={`group relative overflow-hidden px-6 py-3 rounded-lg font-medium text-primary-foreground transition-all ${formStatus === "submitting" || formStatus === "success"
                               ? "bg-muted cursor-not-allowed"
-                              : "bg-primary hover:brightness-110"
-                          }`}
+                              : "bg-secondary hover:brightness-110"
+                            }`}
                         >
                           {formStatus === "submitting"
                             ? "Sending..."
                             : formStatus === "success"
-                            ? "Message Sent!"
-                            : "Send Message"}
+                              ? "Message Sent!"
+                              : "Send Message"}
                           <span className="absolute inset-0 h-full w-full bg-white/30 scale-0 rounded-lg transition-all group-active:scale-100 opacity-0 group-active:opacity-100 duration-300" />
                         </button>
                       </div>
@@ -369,9 +367,9 @@ export default function NewContact() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="group relative h-full overflow-hidden border-[#163791]/20 bg-black/20 backdrop-blur-xl hover:border-[#163791]/30 hover:bg-black/30 transition-all duration-500">
+                <Card className="group relative h-full overflow-hidden border border-secondary/20 bg-card/20 backdrop-blur-xl hover:border-secondary/30 hover:bg-card/30 transition-all duration-500 shadow-lg shadow-black/50">
                   <CardHeader className="pb-6 relative">
-                    <CardTitle className="text-xl text-card-foreground group-hover:text-primary transition-colors duration-300">
+                    <CardTitle className="text-xl text-card-foreground group-hover:text-secondary transition-colors duration-300">
                       Connect With Us
                     </CardTitle>
                   </CardHeader>
@@ -413,7 +411,7 @@ export default function NewContact() {
                       }
                     ].map((item, index) => (
                       <div key={index} className="flex items-start">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
                           {item.icon}
                         </div>
                         <div className="ml-4">
@@ -423,7 +421,7 @@ export default function NewContact() {
                       </div>
                     ))}
 
-                    <div className="mt-8 pt-6 border-t border-[#163791]/20">
+                    <div className="mt-8 pt-6 border-t border-secondary/20">
                       <h4 className="text-sm font-medium text-muted-foreground mb-4">Follow Us</h4>
                       <div className="flex space-x-4">
                         {[
@@ -473,7 +471,7 @@ export default function NewContact() {
                           <a
                             key={index}
                             href={platform.url}
-                            className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary transition-colors"
+                            className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-secondary/20 hover:text-secondary transition-colors"
                             aria-label={`Follow us on ${platform.name}`}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -486,9 +484,9 @@ export default function NewContact() {
                   </CardContent>
                 </Card>
 
-                <Card className="group relative h-full overflow-hidden border-[#163791]/20 bg-black/20 backdrop-blur-xl hover:border-[#163791]/30 hover:bg-black/30 transition-all duration-500">
+                <Card className="group relative h-full overflow-hidden border border-secondary/20 bg-card/20 backdrop-blur-xl hover:border-secondary/30 hover:bg-card/30 transition-all duration-500 shadow-lg shadow-black/50">
                   <CardHeader className="pb-6 relative">
-                    <CardTitle className="text-xl text-card-foreground group-hover:text-primary transition-colors duration-300">
+                    <CardTitle className="text-xl text-card-foreground group-hover:text-secondary transition-colors duration-300">
                       Our Location
                     </CardTitle>
                   </CardHeader>
@@ -503,7 +501,7 @@ export default function NewContact() {
                         title="Office Location Map"
                       />
                     </div>
-                    <div className="mt-6 pt-4 border-t border-[#163791]/20">
+                    <div className="mt-6 pt-4 border-t border-secondary/20">
                       <h4 className="text-sm font-medium text-muted-foreground mb-4">Business Hours</h4>
                       <div className="space-y-2">
                         <div className="flex justify-between">
@@ -537,7 +535,7 @@ export default function NewContact() {
                   >
                     <div className="max-w-3xl mx-auto md:mx-0 mb-10">
                       <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                        Frequently Asked <span className="text-primary">Questions</span>
+                        Frequently Asked <span className="text-secondary">Questions</span>
                       </h2>
                       <p className="text-muted-foreground">
                         Find answers to common questions about our services and processes. If you can't find what you're looking for, feel free to reach out to us directly.
@@ -596,7 +594,7 @@ export default function NewContact() {
               >
                 <div className="relative mx-auto p-10 md:p-14">
                   <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white">
-                    Stay <span className="text-primary">Updated</span>
+                    Stay <span className="text-secondary">Updated</span>
                   </h2>
                   <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto">
                     Subscribe to our newsletter to receive the latest updates, insights,
@@ -622,15 +620,15 @@ export default function NewContact() {
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="flex-grow bg-zinc-900/70 backdrop-blur-sm border border-primary/40 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary/70 focus:border-primary/70 shadow-xl focus:shadow-2xl transition-all duration-300"
+                      className="flex-grow bg-zinc-900/70 backdrop-blur-sm border border-secondary/40 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-secondary/70 focus:border-secondary/70 shadow-xl focus:shadow-2xl transition-all duration-300"
                     />
-                    <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                    <button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
                       Subscribe
                     </button>
                   </div>
 
                   <p className="text-sm text-white/60 mt-4 max-w-md mx-auto text-left">
-                    By subscribing, you agree to our <a href="#" className="text-primary hover:underline">Privacy Policy</a>
+                    By subscribing, you agree to our <a href="#" className="text-secondary hover:underline">Privacy Policy</a>
                   </p>
                 </div>
               </motion.div>
@@ -659,16 +657,16 @@ const FaqAccordion = () => {
   return (
     <div className="space-y-4">
       {faqs.map((faq, index) => (
-        <div key={index} className="border border-[#163791]/20 rounded-lg">
+        <div key={index} className="border border-secondary/20 rounded-lg">
           <button
             onClick={() => setOpenFaq(openFaq === index ? null : index)}
             className="w-full flex justify-between items-center p-4 text-left text-foreground hover:bg-black/20 transition-colors"
           >
             <span className="font-medium">{faq.q}</span>
-            <span className="text-primary text-xl">{openFaq === index ? '-' : '+'}</span>
+            <span className="text-secondary text-xl">{openFaq === index ? '-' : '+'}</span>
           </button>
           {openFaq === index && (
-            <div className="p-4 border-top border-[#163791]/20 text-muted-foreground bg-black/10">
+            <div className="p-4 border-top border-secondary/20 text-muted-foreground bg-card/10">
               {faq.a}
             </div>
           )}
