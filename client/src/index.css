@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rotateAurora {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pulse-strong {
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+/* Base palette (dark, warm) */
+:root {
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.274);
+  
+  /* Modern Professional Dark Theme */
+  --background: 222 47% 5%; /* Deep dark blue/black base */
+  --foreground: 0 0% 96%; /* #f5f5f5 */
+  
+  --card: 222 47% 7%;
+  --card-foreground: 0 0% 96%;
+  --card-border: 222 47% 12%;
+  
+  --popover: 222 47% 7%;
+  --popover-foreground: 0 0% 96%;
+  --popover-border: 222 47% 12%;
+  
+  /* Primary - Black (Current) */
+  --primary: 0 0% 0%; 
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary - #163791 */
+  --secondary: 224 73% 33%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Tertiary - #62AADE */
+  --tertiary: 205 63% 63%;
+  --tertiary-foreground: 0 0% 0%;
+  
+  --muted: 222 47% 12%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 222 47% 12%;
+  --accent-foreground: 0 0% 96%;
+  
+  --destructive: 0 85% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 222 47% 12%;
+  --input: 222 47% 12%;
+  --ring: 224 73% 33%;
+  
+  --radius: 0.5rem;
+  
+  /* Shadows */
+  --shadow-2xs: 0px 2px 0px 0px rgba(0,0,0,0.3);
+  --shadow-xs: 0px 2px 0px 0px rgba(0,0,0,0.35);
+  --shadow-sm: 0px 2px 0px 0px rgba(0,0,0,0.4), 0px 1px 2px -1px rgba(0,0,0,0.45);
+  --shadow: 0px 2px 0px 0px rgba(0,0,0,0.4), 0px 1px 2px -1px rgba(0,0,0,0.45);
+  --shadow-md: 0px 2px 0px 0px rgba(0,0,0,0.45), 0px 2px 4px -1px rgba(0,0,0,0.5);
+  --shadow-lg: 0px 2px 0px 0px rgba(0,0,0,0.5), 0px 4px 6px -1px rgba(0,0,0,0.55);
+  --shadow-xl: 0px 2px 0px 0px rgba(0,0,0,0.55), 0px 8px 10px -1px rgba(0,0,0,0.6);
+  --shadow-2xl: 0px 2px 0px 0px rgba(0,0,0,0.6);
+  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --sidebar-primary: 224 73% 33%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 222 47% 12%;
+  --sidebar-accent-foreground: 0 0% 96%;
+  --sidebar-ring: 224 73% 33%;
+  --sidebar: 222 47% 7%;
+  --sidebar-foreground: 0 0% 96%;
+  --sidebar-border: 222 47% 12%;
+  
+  /* Additional vars */
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+}
+
+.dark {
+  /* Inherit from root since we are enforcing a dark theme for "Modern Professional" */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  html, body, #root {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* === ADDED AURORA STYLES HERE FOR BETTER ORGANIZATION === */
+@layer components {
+  /* Aurora Effect for Badges */
+  .animate-pulse-strong {
+  animation: pulse-strong 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  transform-origin: center;
+}
+  .aurora-container {
+    @apply relative rounded-full overflow-hidden;
+  }
+  .aurora-background {
+    content: '';
+    position: absolute;
+    /* This element is now the same size as its parent, with no overflow */
+    inset: 0px; 
+    border-radius: inherit;
+    /* The background and animation are applied here directly */
+    background: conic-gradient(from 0deg at 50% 50%, hsl(var(--primary)/0.5), hsl(var(--primary)/0), hsl(var(--primary)/0.5));
+    animation: rotateAurora 4s linear infinite;
+    /* We animate the transform property, which is safe for layout */
+    transform-origin: center;
+}
+
+
+  /* Aurora Effect for Buttons */
+  .aurora-container-button {
+    background-color: hsl(var(--primary));
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+  }
+  .aurora-background-button {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 300%;
+    background: linear-gradient(0deg,transparent,hsl(var(--primary)/0.8),transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: rotateAurora 4s linear infinite;
+  }
+  .aurora-container-button:hover .aurora-background-button {
+    @apply opacity-100;
+  }
+
+  /* Animated bottom gradient border for cards */
+  @keyframes gradient-slide-x {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .shadcn-card::after {
+    background-size: 200% 100% !important;
+    animation: gradient-slide-x 3s linear infinite !important;
+  }
+}
+
+
+/* Your original custom utilities */
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
