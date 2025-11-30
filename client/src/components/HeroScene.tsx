@@ -340,12 +340,16 @@ export default function IndustrialHero() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button className="group relative text-base px-8 py-4 rounded-full font-bold transition-transform duration-300 hover:scale-105 flex items-center overflow-hidden bg-secondary text-secondary-foreground w-full sm:w-auto shadow-[0_0_40px_hsl(var(--secondary)/0.4)]">
-                  <span className="relative z-10 flex items-center justify-center gap-2">Discover Our Platform <ArrowRight className="h-5 w-5 group-hover:translate-x-1" /></span>
-                </button>
-                <button className="group text-base px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 flex items-center backdrop-blur-sm bg-white/5 border-2 border-white/10 text-zinc-100 w-full sm:w-auto">
-                  <Users className="mr-2 h-5 w-5 group-hover:scale-110" /> Join as a Partner
-                </button>
+                <a href="https://calendly.com/nikhilg-autonexai360/30min" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <button className="group relative text-base px-8 py-4 rounded-full font-bold transition-transform duration-300 hover:scale-105 flex items-center overflow-hidden bg-secondary text-secondary-foreground w-full sm:w-auto shadow-[0_0_40px_hsl(var(--secondary)/0.4)]">
+                    <span className="relative z-10 flex items-center justify-center gap-2">Discover Our Platform <ArrowRight className="h-5 w-5 group-hover:translate-x-1" /></span>
+                  </button>
+                </a>
+                <a href="/contact" className="w-full sm:w-auto">
+                  <button className="group text-base px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 flex items-center backdrop-blur-sm bg-white/5 border-2 border-white/10 text-zinc-100 w-full sm:w-auto">
+                    <Users className="mr-2 h-5 w-5 group-hover:scale-110" /> Join as a Partner
+                  </button>
+                </a>
               </div>
 
               {/* Inline AI Logo container shown directly under CTAs, responsive and centered */}

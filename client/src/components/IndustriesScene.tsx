@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MagneticButton } from "./motion/MagneticButton";
-import { Package, Beaker, Factory, ArrowRight, TrendingUp } from "lucide-react";
+import { Package, Beaker, Factory, TrendingUp } from "lucide-react";
 import { Section, SectionHeader } from "./motion/Section";
 import { StaggerChildren, SlideIn, serviceCardHover, splitEntry } from "./motion/Motion";
 import { CountUp } from "./motion/CountUp";
@@ -44,9 +44,7 @@ const industries = [
 ];
 
 export default function IndustriesScene() {
-  const handleLearnMore = (industry: string) => {
-    console.log(`Learn more about ${industry} clicked`); // TODO: remove mock functionality
-  };
+
 
   return (
     <Section id="industries" background="gradient" padding="xl">
@@ -157,23 +155,7 @@ export default function IndustriesScene() {
                       </div>
                     </div>
 
-                    {/* Premium CTA Button */}
-                    <MagneticButton
-                      variant="outline"
-                      className="w-full border-2 border-secondary/40 text-tertiary bg-gradient-to-r from-secondary/10 to-transparent group-hover:from-secondary group-hover:to-tertiary/30 group-hover:text-white group-hover:border-tertiary transition-all duration-300 shadow-lg shadow-secondary/10 group-hover:shadow-tertiary/30 font-semibold"
-                      onClick={() => handleLearnMore(industry.title)}
-                      data-testid={`button-learn-more-${index}`}
-                      strength={0.2}
-                    >
-                      Learn More
-                      <motion.div
-                        className="ml-2"
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <ArrowRight className="h-4 w-4" />
-                      </motion.div>
-                    </MagneticButton>
+
                   </CardContent>
 
                   {/* Premium animated border glow */}
