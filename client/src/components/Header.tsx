@@ -96,11 +96,6 @@ export default function Header() {
                     </Button>
                   </li>
                   <li className="ml-10 md:ml-14">
-                    <Button variant="ghost" className="justify-start w-full text-lg blue-hover" onClick={() => goToTopAndClose("/data-services")}>
-                      Data Services
-                    </Button>
-                  </li>
-                  <li className="ml-14 md:ml-20">
                     <Button variant="ghost" className="justify-start w-full text-lg blue-hover" onClick={() => goToTopAndClose("/about")}>
                       About
                     </Button>

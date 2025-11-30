@@ -8,7 +8,6 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { lazy, Suspense } from "react";
 const Home = lazy(() => import("@/pages/Home"));
 const Products = lazy(() => import("@/pages/Products"));
-const DataServices = lazy(() => import("@/pages/DataServices"));
 const About = lazy(() => import("@/pages/About"));
 const NewContact = lazy(() => import("@/pages/NewContact"));
 import NotFound from "@/pages/not-found";
@@ -25,7 +24,6 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
-      <Route path="/data-services" component={DataServices} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={NewContact} />
       <Route component={NotFound} />
