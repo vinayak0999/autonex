@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { buildApiUrl } from "@/lib/apiConfig";
-import heroImg from "@assets/generated_images/Industrial_monitoring_dashboard_mockup_02e09966.png";
+import heroImg from "@assets/generated_images/Industrial_monitoring_dashboard_mockup_02e09966.jpeg";
 import { Sparkles } from "lucide-react";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
