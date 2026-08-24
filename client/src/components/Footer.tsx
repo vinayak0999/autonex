@@ -272,21 +272,20 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
               style={{ paddingTop: "5rem", paddingBottom: "2.5rem" }}
             >
               <h2
+                className="font-medium text-[#1a2236]"
                 style={{
-                  
-                  fontWeight: 500,
-                  textTransform: "uppercase",
-                  lineHeight:    0.95,
-                  color:         "#1a2236",
+                  lineHeight: 1,
                   letterSpacing: "-0.02em",
-                  textShadow:    "0 0 40px rgba(98,170,222,0.1), 0 0 10px rgba(22,55,145,0.05)",
                 }}
               >
                 <span style={{ display: "block", fontSize: "clamp(2.5rem, 8vw, 7.5rem)" }}>
-                  LET&apos;S GET STARTED
+                  Let&apos;s get started
                 </span>
-                <span style={{ display: "block", fontSize: "clamp(2.5rem, 8vw, 7.5rem)", letterSpacing: "0.02em" }}>
-                  TOGETHER
+                <span 
+                  style={{ display: "block", fontSize: "clamp(2.5rem, 8vw, 7.5rem)", letterSpacing: "0.02em" }}
+                  className="bg-gradient-to-br from-[#163791] to-[#62AADE] bg-clip-text text-transparent"
+                >
+                  together.
                 </span>
               </h2>
 

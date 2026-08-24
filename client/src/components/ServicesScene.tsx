@@ -439,10 +439,13 @@ export default function ServicesScene() {
           </div>
         </div>
         <h2
-          className="text-4xl sm:text-5xl lg:text-[4.5rem] font-medium text-[#1a2236] leading-[1.05]"
-          style={{ letterSpacing: "-0.025em" }}
+          className="text-4xl sm:text-5xl lg:text-[4.5rem] font-medium leading-[1.05]"
+          style={{ color: "#1a2236", letterSpacing: "-0.025em" }}
         >
-          Four products.<br />One platform.
+          Four products.<br />
+          <span className="bg-gradient-to-br from-[#163791] to-[#62AADE] bg-clip-text text-transparent">
+            One platform.
+          </span>
         </h2>
       </div>
 
