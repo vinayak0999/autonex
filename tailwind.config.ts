@@ -87,7 +87,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "var(--font-sans)", "sans-serif"],
+        sans: ["Manrope", "var(--font-sans)", "sans-serif"],
+        title: ["Montserrat", "var(--font-title)", "sans-serif"],
         serif: ["var(--font-serif)"],
         mono: ["JetBrains Mono", "var(--font-mono)", "monospace"],
       },
