@@ -119,7 +119,7 @@ export default function Header() {
     <header
       ref={headerRef}
       className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent"
+        scrolled ? "bg-white/90 backdrop-blur-md border-b border-gray-200" : "bg-white/70 backdrop-blur-sm"
       }`}
       style={{ top: 14, animation: "headerEntrance 0.85s cubic-bezier(0.22,1,0.36,1) 0.08s both" }}
     >
@@ -129,10 +129,9 @@ export default function Header() {
           <div className="flex items-center justify-center">
             <img
               ref={logoRef}
-              src="/path25.png"
+              src="/autonex_logo.png"
               alt="Autonex Logo"
-              className="h-14 w-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-105"
-              style={{ filter: "brightness(1.95) saturate(1.1)" }}
+              className="h-10 w-auto object-contain cursor-pointer transition-transform duration-200 hover:scale-105"
               onClick={() => handleNavClick("home")}
             />
           </div>
@@ -142,7 +141,7 @@ export default function Header() {
               aria-label="Open menu"
               onClick={() => setMenuOpen(true)}
               className="hover:scale-105 transition-transform duration-150 flex items-center justify-center rounded-md"
-              style={{ width: 30, height: 30, background: "transparent", border: "none", cursor: "pointer", color: "white" }}
+              style={{ width: 30, height: 30, background: "transparent", border: "none", cursor: "pointer", color: "#1a2236" }}
             >
               <Menu style={{ width: 36, height: 36 }} />
             </button>
@@ -171,10 +170,10 @@ export default function Header() {
         <div className="pointer-events-none absolute top-0 right-0 w-[85vw] max-w-[520px] aspect-square overflow-hidden rounded-bl-[100%]">
           <div
             ref={menuPanelRef}
-            className="pointer-events-auto absolute inset-0 text-white shadow-2xl flex flex-col"
+            className="pointer-events-auto absolute inset-0 shadow-2xl flex flex-col"
             style={{
-              background: "rgba(6,13,31,0.98)",
-              border: "1px solid rgba(98,170,222,0.2)",
+              background: "rgba(255,255,255,0.98)",
+              border: "1px solid rgba(22,55,145,0.12)",
               // Initial state: invisible at frame 0 — GSAP will animate from here
               opacity: 0,
               transform: "translateX(100%)",
@@ -231,9 +230,12 @@ export default function Header() {
           from { transform: translateY(-64px); opacity: 0; }
           to   { transform: translateY(0px);  opacity: 1; }
         }
+        .nav-item-hover {
+          color: #1a2236 !important;
+        }
         .nav-item-hover:hover {
-          background-color: rgba(98,170,222,0.1) !important;
-          color: #62AADE !important;
+          background-color: rgba(22,55,145,0.06) !important;
+          color: #163791 !important;
         }
       `}</style>
     </header>

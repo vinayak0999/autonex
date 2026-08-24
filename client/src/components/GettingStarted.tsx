@@ -154,17 +154,17 @@ export default function GettingStarted() {
           {/* Aurora badge */}
           <div className="relative inline-flex items-center justify-center p-[1.5px] mb-5 overflow-hidden rounded-full">
             <div className="absolute top-1/2 left-1/2 w-[200%] h-[400%]" style={{ background: "conic-gradient(from 0deg at 50% 50%, rgba(98,170,222,0.6), rgba(22,55,145,0.2), rgba(98,170,222,0.6))", animation: "rotateAurora 4s linear infinite" }} />
-            <div className="relative flex items-center px-5 py-2.5 rounded-full" style={{ background: "rgba(6,13,31,0.9)", backdropFilter: "blur(12px)" }}>
-              <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#62AADE" }} />
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white">Getting Started</span>
+              <div className="relative flex items-center px-5 py-2.5 rounded-full" style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(12px)", boxShadow: "0 2px 16px rgba(22,55,145,0.1)" }}>
+              <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#163791" }} />
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "#163791" }}>Getting Started</span>
             </div>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05]"
-              style={{ letterSpacing: "-0.025em" }}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05]"
+              style={{ color: "#1a2236", letterSpacing: "-0.025em" }}>
             Simple to start.<br />
             <span style={{ color: "#60a5fa" }}>Proven to deliver.</span>
           </h2>
-          <p className="mt-5 text-base max-w-lg mx-auto" style={{ color: "rgba(255,255,255,0.38)" }}>
+          <p className="mt-5 text-base max-w-lg mx-auto" style={{ color: "rgba(30,40,80,0.5)" }}>
             No operational disruption. See AI results on your own cameras before you commit.
           </p>
         </div>
@@ -199,7 +199,7 @@ export default function GettingStarted() {
             <path
               ref={railRef}
               fill="none"
-              stroke="rgba(255,255,255,0.10)"
+              stroke="rgba(22,55,145,0.10)"
               strokeWidth="2.5"
               strokeDasharray="10 7"
               strokeLinecap="round"
@@ -257,7 +257,9 @@ export default function GettingStarted() {
                 {/* Card */}
                 <div style={{
                   borderRadius: 16, padding: "1.5rem",
-                  background: "rgba(255,255,255,0.03)",
+                  background: "rgba(248,250,252,0.95)",
+                  border: "1px solid rgba(22,55,145,0.1)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
                   border: `1px solid ${step.color}20`,
                   boxShadow: `0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 ${step.color}10`,
                   backdropFilter: "blur(8px)",
@@ -278,12 +280,12 @@ export default function GettingStarted() {
                     {step.timeframe}
                   </span>
                   <h3 style={{
-                    fontSize: "1.4rem", fontWeight: 900, color: "#fff",
+                    fontSize: "1.4rem", fontWeight: 900, color: "#1a2236",
                     letterSpacing: "-0.02em", marginBottom: "0.65rem",
                   }}>
                     {step.heading}
                   </h3>
-                  <p style={{ fontSize: "0.78rem", lineHeight: 1.65, color: "rgba(255,255,255,0.45)" }}>
+                  <p style={{ fontSize: "0.78rem", lineHeight: 1.65, color: "rgba(30,40,80,0.5)" }}>
                     {step.body}
                   </p>
                 </div>

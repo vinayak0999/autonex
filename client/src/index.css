@@ -19,30 +19,30 @@
   }
 }
 
-/* Base palette (dark, warm) */
+/* Base palette — Light / White theme */
 :root {
-  --button-outline: rgba(255, 255, 255, 0.1);
-  --badge-outline: rgba(255, 255, 255, 0.05);
+  --button-outline: rgba(22, 55, 145, 0.12);
+  --badge-outline: rgba(22, 55, 145, 0.06);
   --opaque-button-border-intensity: 9;
-  --elevate-1: rgba(255, 255, 255, 0.04);
-  --elevate-2: rgba(255, 255, 255, 0.274);
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.06);
 
-  /* Modern Professional Dark Theme */
-  --background: 222 47% 5%;
-  /* Deep dark blue/black base */
-  --foreground: 0 0% 96%;
-  /* #f5f5f5 */
+  /* Clean White Theme */
+  --background: 0 0% 100%;
+  /* Pure white */
+  --foreground: 222 47% 11%;
+  /* #1a2236 dark blue-gray */
 
-  --card: 222 47% 7%;
-  --card-foreground: 0 0% 96%;
-  --card-border: 222 47% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --card-border: 214 32% 91%;
 
-  --popover: 222 47% 7%;
-  --popover-foreground: 0 0% 96%;
-  --popover-border: 222 47% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --popover-border: 214 32% 91%;
 
-  /* Primary - Black (Current) */
-  --primary: 0 0% 0%;
+  /* Primary - Autonex deep blue */
+  --primary: 224 73% 33%;
   --primary-foreground: 0 0% 100%;
 
   /* Secondary - #163791 */
@@ -53,42 +53,42 @@
   --tertiary: 205 63% 63%;
   --tertiary-foreground: 0 0% 0%;
 
-  --muted: 222 47% 12%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
 
-  --accent: 222 47% 12%;
-  --accent-foreground: 0 0% 96%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
 
   --destructive: 0 85% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 222 47% 12%;
-  --input: 222 47% 12%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
   --ring: 224 73% 33%;
 
   --radius: 0.5rem;
 
-  /* Shadows */
-  --shadow-2xs: 0px 2px 0px 0px rgba(0, 0, 0, 0.3);
-  --shadow-xs: 0px 2px 0px 0px rgba(0, 0, 0, 0.35);
-  --shadow-sm: 0px 2px 0px 0px rgba(0, 0, 0, 0.4), 0px 1px 2px -1px rgba(0, 0, 0, 0.45);
-  --shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.4), 0px 1px 2px -1px rgba(0, 0, 0, 0.45);
-  --shadow-md: 0px 2px 0px 0px rgba(0, 0, 0, 0.45), 0px 2px 4px -1px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0px 2px 0px 0px rgba(0, 0, 0, 0.5), 0px 4px 6px -1px rgba(0, 0, 0, 0.55);
-  --shadow-xl: 0px 2px 0px 0px rgba(0, 0, 0, 0.55), 0px 8px 10px -1px rgba(0, 0, 0, 0.6);
-  --shadow-2xl: 0px 2px 0px 0px rgba(0, 0, 0, 0.6);
+  /* Lighter shadows for white theme */
+  --shadow-2xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --shadow-xs: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0px 1px 3px 0px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08), 0px 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 4px 12px 0px rgba(0, 0, 0, 0.08), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0px 8px 24px 0px rgba(0, 0, 0, 0.08), 0px 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0px 16px 40px 0px rgba(0, 0, 0, 0.08), 0px 8px 10px -1px rgba(0, 0, 0, 0.05);
+  --shadow-2xl: 0px 24px 60px 0px rgba(0, 0, 0, 0.10);
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   --sidebar-primary: 224 73% 33%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 222 47% 12%;
-  --sidebar-accent-foreground: 0 0% 96%;
+  --sidebar-accent: 210 40% 96%;
+  --sidebar-accent-foreground: 222 47% 11%;
   --sidebar-ring: 224 73% 33%;
-  --sidebar: 222 47% 7%;
-  --sidebar-foreground: 0 0% 96%;
-  --sidebar-border: 222 47% 12%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 222 47% 11%;
+  --sidebar-border: 214 32% 91%;
 
   /* Additional vars */
   --primary-border: hsl(var(--primary));

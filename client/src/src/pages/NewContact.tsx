@@ -164,8 +164,8 @@ export default function NewContact() {
                           key={tab.id}
                           onClick={() => setActiveTab(tab.id)}
                           className={`px-4 py-2 mr-2 whitespace-nowrap rounded-full text-sm font-medium transition-all ${activeTab === tab.id
-                              ? "bg-secondary text-secondary-foreground"
-                              : "bg-card/30 text-foreground/70 hover:bg-card/40 border border-secondary/20"
+                            ? "bg-secondary text-secondary-foreground"
+                            : "bg-card/30 text-foreground/70 hover:bg-card/40 border border-secondary/20"
                             }`}
                         >
                           {tab.label}
@@ -344,8 +344,8 @@ export default function NewContact() {
                           type="submit"
                           disabled={formStatus === "submitting" || formStatus === "success"}
                           className={`group relative overflow-hidden px-6 py-3 rounded-lg font-medium text-primary-foreground transition-all ${formStatus === "submitting" || formStatus === "success"
-                              ? "bg-muted cursor-not-allowed"
-                              : "bg-secondary hover:brightness-110"
+                            ? "bg-muted cursor-not-allowed"
+                            : "bg-secondary hover:brightness-110"
                             }`}
                         >
                           {formStatus === "submitting"

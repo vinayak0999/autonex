@@ -410,7 +410,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
               </div>
 
               {/* Thin divider visible on all sizes */}
-              <Separator className="my-6 bg-white/10" />
+              <Separator className="my-6 bg-gray-200" />
 
               {/* Bottom bar for < 1280px */}
               <div className="xl:hidden w-full mt-2">
@@ -418,7 +418,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                 <div className="sm:hidden flex flex-col items-center gap-4">
                   <div className="flex items-center gap-3">
                     <img
-                      src="/path25.png"
+                      src="/autonex_logo.png"
                       alt="Autonex Home"
                       className="h-6 w-auto object-contain cursor-pointer"
                       onClick={() => handleNavClick('home')}
@@ -426,14 +426,14 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                     <span className="text-muted-foreground">|</span>
                     <p className="text-muted-foreground text-xs">© {currentYear} Autonex. All rights reserved.</p>
                   </div>
-                  <div className="h-px w-4/5 bg-white/10" />
+                  <div className="h-px w-4/5 bg-gray-200" />
                 </div>
 
                 {/* Single row with equal spacing on small-to-large (<1280px) */}
                 <div className="hidden sm:flex items-center justify-between px-4 sm:px-6 md:px-8 gap-4">
                   <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-nowrap">
                     <img
-                      src="/path25.png"
+                      src="/autonex_logo.png"
                       alt="Autonex Home"
                       className="h-6 w-auto object-contain cursor-pointer flex-shrink-0"
                       onClick={() => handleNavClick('home')}
@@ -448,7 +448,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
               <div className="hidden xl:flex items-center justify-between gap-10 text-left mt-12 pl-8 pr-4">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/path25.png"
+                    src="/autonex_logo.png"
                     alt="Autonex Home"
                     className="h-7 w-auto object-contain cursor-pointer"
                     onClick={() => handleNavClick('home')}

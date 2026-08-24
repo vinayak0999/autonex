@@ -79,9 +79,8 @@ export const ParticleBackground = () => {
       const vw = cachedVW;
       const vh = cachedVH;
 
-      // Clear with brand dark background — slightly deeper navy
-      ctx.fillStyle = "rgba(3, 7, 18, 1)";
-      ctx.fillRect(0, 0, vw, vh);
+      // Clear to transparent — white page background shows through
+      ctx.clearRect(0, 0, vw, vh);
 
       const FLEE_RADIUS = isMobile ? 80 : 140;
 
@@ -108,12 +107,12 @@ export const ParticleBackground = () => {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Color: white-blue → bright electric blue near cursor
+        // Color: dark navy-blue → Autonex brand blue near cursor (subtle on white)
         const proximity = dist < FLEE_RADIUS ? 1 - dist / FLEE_RADIUS : 0;
-        const r = Math.round(lerp(98, 180, proximity));
-        const g = Math.round(lerp(170, 220, proximity));
-        const b = Math.round(lerp(222, 255, proximity));
-        const alpha = lerp(p.baseAlpha, 1.0, proximity);
+        const r = Math.round(lerp(22, 98, proximity));
+        const g = Math.round(lerp(55, 170, proximity));
+        const b = Math.round(lerp(145, 222, proximity));
+        const alpha = lerp(p.baseAlpha * 0.45, 0.85, proximity);
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size + proximity * 1.4, 0, Math.PI * 2);
@@ -129,8 +128,8 @@ export const ParticleBackground = () => {
             const dy = particles[a].y - particles[b].y;
             const d = Math.sqrt(dx * dx + dy * dy);
             if (d < 90) {
-              const opacity = (1 - d / 90) * 0.25;
-              ctx.strokeStyle = `rgba(98,170,222,${opacity})`;
+              const opacity = (1 - d / 90) * 0.12;
+              ctx.strokeStyle = `rgba(22,55,145,${opacity})`;
               ctx.lineWidth = 0.5;
               ctx.beginPath();
               ctx.moveTo(particles[a].x, particles[a].y);

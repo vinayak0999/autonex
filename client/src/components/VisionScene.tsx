@@ -102,13 +102,13 @@ export default function VisionScene() {
       {/* ── Subtle section overlay so cards pop over particles ── */}
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none",
-        background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(6,13,31,0.55) 0%, transparent 100%)",
+        background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(22,55,145,0.04) 0%, transparent 100%)",
       }} />
 
       {/* ── Grid texture ── */}
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none", opacity: 0.03,
-        backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+        backgroundImage: "linear-gradient(rgba(22,55,145,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(22,55,145,0.06) 1px, transparent 1px)",
         backgroundSize: "40px 40px",
       }} />
 
@@ -117,9 +117,9 @@ export default function VisionScene() {
           {/* Aurora badge */}
           <div className="relative inline-flex items-center justify-center p-[1.5px] mb-6 overflow-hidden rounded-full">
             <div className="absolute top-1/2 left-1/2 w-[200%] h-[400%]" style={{ background: "conic-gradient(from 0deg at 50% 50%, rgba(98,170,222,0.6), rgba(22,55,145,0.2), rgba(98,170,222,0.6))", animation: "rotateAurora 4s linear infinite" }} />
-            <div className="relative flex items-center px-5 py-2.5 rounded-full" style={{ background: "rgba(6,13,31,0.9)", backdropFilter: "blur(12px)" }}>
-              <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#62AADE" }} />
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white">Why Autonex</span>
+             <div className="relative flex items-center px-5 py-2.5 rounded-full" style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(12px)", boxShadow: "0 2px 16px rgba(22,55,145,0.1)" }}>
+              <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#163791" }} />
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "#163791" }}>Why Autonex</span>
             </div>
           </div>
         <motion.h2
@@ -127,7 +127,7 @@ export default function VisionScene() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.02] tracking-tight"
+          className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight" style={{ color: "#1a2236" }}
         >
           Deep tech.<br />
           <span style={{
@@ -195,7 +195,7 @@ export default function VisionScene() {
                 width:  i === active ? 28 : 8,
                 height: 8,
                 borderRadius: 99,
-                background: i === active ? card.color : "rgba(255,255,255,0.2)",
+                background: i === active ? card.color : "rgba(22,55,145,0.15)",
                 border: "none",
                 cursor: "pointer",
                 transition: "all 0.35s cubic-bezier(0.16,1,0.3,1)",
@@ -211,14 +211,14 @@ export default function VisionScene() {
             onClick={goPrev}
             style={{
               width: 44, height: 44, borderRadius: "50%",
-              background: "rgba(255,255,255,0.06)",
-              border: `1px solid rgba(255,255,255,0.12)`,
-              color: "#fff", cursor: "pointer",
+              background: "rgba(22,55,145,0.06)",
+              border: `1px solid rgba(22,55,145,0.15)`,
+              color: "#163791", cursor: "pointer",
               display: "flex", alignItems: "center", justifyContent: "center",
               transition: "all 0.2s",
             }}
-            onMouseEnter={e => (e.currentTarget.style.background = `${card.color}25`)}
-            onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.06)")}
+            onMouseEnter={e => (e.currentTarget.style.background = `${card.color}18`)}
+            onMouseLeave={e => (e.currentTarget.style.background = "rgba(22,55,145,0.06)")}
           >
             <ChevronLeft size={18} />
           </button>
@@ -226,14 +226,14 @@ export default function VisionScene() {
             onClick={goNext}
             style={{
               width: 44, height: 44, borderRadius: "50%",
-              background: "rgba(255,255,255,0.06)",
-              border: `1px solid rgba(255,255,255,0.12)`,
-              color: "#fff", cursor: "pointer",
+              background: "rgba(22,55,145,0.06)",
+              border: `1px solid rgba(22,55,145,0.15)`,
+              color: "#163791", cursor: "pointer",
               display: "flex", alignItems: "center", justifyContent: "center",
               transition: "all 0.2s",
             }}
-            onMouseEnter={e => (e.currentTarget.style.background = `${card.color}25`)}
-            onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,0.06)")}
+            onMouseEnter={e => (e.currentTarget.style.background = `${card.color}18`)}
+            onMouseLeave={e => (e.currentTarget.style.background = "rgba(22,55,145,0.06)")}
           >
             <ChevronRight size={18} />
           </button>
@@ -251,9 +251,9 @@ function ActiveCard({ card }: { card: typeof CARDS[0] }) {
       width: "min(88vw, 420px)",
       borderRadius: 28,
       overflow: "hidden",
-      background: `linear-gradient(145deg, ${darkColor} 0%, rgba(6,13,31,0.92) 100%)`,
-      border: `1.5px solid ${color}55`,
-      boxShadow: `0 0 0 1px ${color}15, 0 32px 80px rgba(0,0,0,0.75), 0 0 60px ${color}30`,
+      background: `linear-gradient(145deg, ${color}12 0%, rgba(248,250,252,0.98) 100%)`,
+      border: `1.5px solid ${color}40`,
+      boxShadow: `0 0 0 1px ${color}10, 0 20px 60px rgba(0,0,0,0.08), 0 0 40px ${color}12`,
       backdropFilter: "blur(12px)",
       position: "relative",
     }}>
@@ -293,13 +293,13 @@ function ActiveCard({ card }: { card: typeof CARDS[0] }) {
           <div style={{ textAlign: "right" }}>
             <div style={{
               fontSize: 52, fontWeight: 900, lineHeight: 1,
-              background: `linear-gradient(135deg, #fff 0%, ${color} 100%)`,
+              background: `linear-gradient(135deg, #1a2236 0%, ${color} 100%)`,
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
               letterSpacing: "-0.03em",
             }}>
               {stat}
             </div>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            <div style={{ fontSize: 11, color: "rgba(30,40,80,0.45)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em" }}>
               {statSub}
             </div>
           </div>
@@ -310,10 +310,10 @@ function ActiveCard({ card }: { card: typeof CARDS[0] }) {
 
         {/* Text */}
         <div>
-          <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "#fff", lineHeight: 1.25, marginBottom: 10 }}>
+          <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "#1a2236", lineHeight: 1.25, marginBottom: 10 }}>
             {title}
           </h3>
-          <p style={{ fontSize: "0.85rem", lineHeight: 1.65, color: "rgba(255,255,255,0.52)" }}>
+          <p style={{ fontSize: "0.85rem", lineHeight: 1.65, color: "rgba(30,40,80,0.55)" }}>
             {description}
           </p>
         </div>
@@ -329,7 +329,7 @@ function ActiveCard({ card }: { card: typeof CARDS[0] }) {
             background: color, boxShadow: `0 0 8px ${color}`,
             animation: "pulse 2s infinite",
           }} />
-          <span style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.55)", fontWeight: 600 }}>
+          <span style={{ fontSize: "0.72rem", color: "rgba(30,40,80,0.55)", fontWeight: 600 }}>
             Live across Indian factories
           </span>
         </div>
@@ -351,9 +351,9 @@ function SideCard({ card }: { card: typeof CARDS[0] }) {
   return (
     <div style={{
       borderRadius: 20,
-      background: `linear-gradient(145deg, ${darkColor} 0%, rgba(6,13,31,0.85) 100%)`,
-      border: `1px solid ${color}30`,
-      boxShadow: `0 16px 40px rgba(0,0,0,0.5)`,
+      background: `linear-gradient(145deg, ${color}10 0%, rgba(248,250,252,0.97) 100%)`,
+      border: `1px solid ${color}25`,
+      boxShadow: `0 8px 24px rgba(0,0,0,0.06)`,
       backdropFilter: "blur(8px)",
       padding: "24px 20px",
       opacity: 0.55,
@@ -378,7 +378,7 @@ function SideCard({ card }: { card: typeof CARDS[0] }) {
           {stat}
         </div>
       </div>
-      <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "rgba(255,255,255,0.7)", lineHeight: 1.3 }}>
+      <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#1a2236", lineHeight: 1.3 }}>
         {title}
       </div>
       <div style={{ height: 2, background: `linear-gradient(90deg, ${color}50, transparent)`, borderRadius: 2 }} />

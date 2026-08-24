@@ -160,12 +160,12 @@ export default function HeroScene() {
       <section id="home" ref={sectionRef} className="relative min-h-[100svh] overflow-hidden pt-24 pb-2 sm:pb-4">
 
         {/* Deep space gradient */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(22,55,145,0.25) 0%, transparent 70%)", zIndex: 1 }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(22,55,145,0.08) 0%, transparent 70%)", zIndex: 1 }} />
 
         {/* Drifting aurora blobs — remove filter:blur on mobile (large blurred animated divs = expensive GPU texture) */}
         <div className="absolute pointer-events-none" style={{ inset: 0, overflow: "hidden", zIndex: 1 }}>
-          <div style={{ position: "absolute", top: "15%", left: "20%", width: "55vw", height: "55vw", borderRadius: "50%", background: "radial-gradient(circle, rgba(22,55,145,0.35) 0%, transparent 70%)", animation: "auroraShift 14s ease-in-out infinite", filter: typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches ? undefined : "blur(60px)" }} />
-          <div style={{ position: "absolute", top: "40%", right: "10%", width: "35vw", height: "35vw", borderRadius: "50%", background: "radial-gradient(circle, rgba(98,170,222,0.18) 0%, transparent 70%)", animation: "auroraShift 18s ease-in-out infinite reverse", filter: typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches ? undefined : "blur(50px)" }} />
+          <div style={{ position: "absolute", top: "15%", left: "20%", width: "55vw", height: "55vw", borderRadius: "50%", background: "radial-gradient(circle, rgba(22,55,145,0.08) 0%, transparent 70%)", animation: "auroraShift 14s ease-in-out infinite", filter: typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches ? undefined : "blur(60px)" }} />
+          <div style={{ position: "absolute", top: "40%", right: "10%", width: "35vw", height: "35vw", borderRadius: "50%", background: "radial-gradient(circle, rgba(98,170,222,0.07) 0%, transparent 70%)", animation: "auroraShift 18s ease-in-out infinite reverse", filter: typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches ? undefined : "blur(50px)" }} />
         </div>
 
         {/* Static noise texture — no animation to prevent blinking */}
@@ -182,9 +182,9 @@ export default function HeroScene() {
               {/* Badge */}
               <div ref={badgeRef} className="hero-parallax relative inline-flex items-center justify-center p-[1.5px] mb-8 overflow-hidden rounded-full" style={{ background: "transparent" }}>
                 <div className="absolute top-1/2 left-1/2 w-[200%] h-[400%]" style={{ background: "conic-gradient(from 0deg at 50% 50%, rgba(98,170,222,0.6), rgba(22,55,145,0.2), rgba(98,170,222,0.6))", animation: "rotateAurora 4s linear infinite" }} />
-                <div className="relative flex items-center px-6 py-3 rounded-full" style={{ background: "rgba(6,13,31,0.9)", backdropFilter: "blur(12px)" }}>
-                  <Sparkles className="w-4 h-4 mr-2" style={{ color: "#62AADE" }} />
-                  <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: "#ffffff" }}>Next-Gen Industrial Intelligence</span>
+                <div className="relative flex items-center px-6 py-3 rounded-full" style={{ background: "rgba(255,255,255,0.92)", backdropFilter: "blur(12px)", boxShadow: "0 2px 16px rgba(22,55,145,0.1)" }}>
+                  <Sparkles className="w-4 h-4 mr-2" style={{ color: "#163791" }} />
+                  <span className="text-sm font-semibold tracking-wider uppercase" style={{ color: "#163791" }}>Next-Gen Industrial Intelligence</span>
                 </div>
               </div>
 
@@ -192,7 +192,7 @@ export default function HeroScene() {
               <div>
                 <h1 className="text-3xl sm:text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter mb-6">
                   <span className="block overflow-hidden">
-                    <span ref={line1Ref} className="block text-white">AI PRODUCTS</span>
+                    <span ref={line1Ref} className="block" style={{ color: "#1a2236" }}>AI PRODUCTS</span>
                   </span>
                   <span className="block overflow-hidden">
                     <span
@@ -213,7 +213,7 @@ export default function HeroScene() {
               </div>
 
               {/* Sub */}
-              <p ref={subRef} className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed mb-10 hero-parallax" style={{ color: "rgba(255,255,255,0.65)" }}>
+              <p ref={subRef} className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed mb-10 hero-parallax" style={{ color: "rgba(30,40,80,0.55)" }}>
                We build AI powered deeptech products for automation and observability, with multiple patented products live to improve operations in the factories
               </p>
 
@@ -235,9 +235,9 @@ export default function HeroScene() {
                   <button
                     id="hero-cta-secondary"
                     className="group text-base px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 w-full sm:w-auto transition-all duration-200 hover:scale-105 active:scale-95"
-                    style={{ background: "rgba(255,255,255,0.05)", border: "1.5px solid rgba(98,170,222,0.3)", color: "#fff", backdropFilter: "blur(12px)" }}
-                    onMouseEnter={(e) => { gsap.to(e.currentTarget, { borderColor: "rgba(98,170,222,0.7)", boxShadow: "0 0 20px rgba(98,170,222,0.2)", duration: 0.3 }); }}
-                    onMouseLeave={(e) => { gsap.to(e.currentTarget, { borderColor: "rgba(98,170,222,0.3)", boxShadow: "none", duration: 0.3 }); }}
+                    style={{ background: "rgba(22,55,145,0.06)", border: "1.5px solid rgba(22,55,145,0.25)", color: "#163791", backdropFilter: "blur(12px)" }}
+                    onMouseEnter={(e) => { gsap.to(e.currentTarget, { borderColor: "rgba(22,55,145,0.6)", boxShadow: "0 0 20px rgba(22,55,145,0.15)", duration: 0.3 }); }}
+                    onMouseLeave={(e) => { gsap.to(e.currentTarget, { borderColor: "rgba(22,55,145,0.25)", boxShadow: "none", duration: 0.3 }); }}
                   >
                     <Users className="h-5 w-5 transition-transform group-hover:scale-110" />
                     Join as a Partner

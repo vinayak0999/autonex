@@ -330,8 +330,8 @@ export default function IndustriesScene() {
                     ...getCardStyle(pos, order.length, dims.w, dims.h, dims.offset),
                     borderRadius: 20,
                     overflow: "hidden",
-                    background: "rgba(6, 11, 24, 0.92)",
-                    border: `1px solid ${ind.color}28`,
+                    background: "rgba(255,255,255,0.96)",
+                    border: `1px solid ${ind.color}30`,
                     // Remove backdropFilter on mobile — 6 GPU blur layers = major scroll lag
                     backdropFilter: dims.w < BASE_CARD_W ? undefined : "blur(18px)",
                     boxShadow: isFront
@@ -368,7 +368,7 @@ export default function IndustriesScene() {
                         }}>
                           <Icon style={{ width: 24, height: 24, color: ind.color }} />
                         </div>
-                        <h3 style={{ fontSize: 22, fontWeight: 800, color: "#fff", lineHeight: 1.15, margin: 0 }}>
+                        <h3 style={{ fontSize: 22, fontWeight: 800, color: "#1a2236", lineHeight: 1.15, margin: 0 }}>
                           {ind.name}
                         </h3>
                       </div>
@@ -383,7 +383,7 @@ export default function IndustriesScene() {
                           {ind.stat}
                         </div>
                         <div style={{
-                          fontSize: 10, color: "rgba(255,255,255,0.4)", marginTop: 3,
+                          fontSize: 10, color: "rgba(30,40,80,0.45)", marginTop: 3,
                           textTransform: "uppercase", letterSpacing: "0.07em",
                         }}>
                           {ind.statLabel}
@@ -399,7 +399,7 @@ export default function IndustriesScene() {
                             width: 6, height: 6, borderRadius: "50%", flexShrink: 0,
                             background: ind.color, boxShadow: `0 0 6px ${ind.color}80`,
                           }} />
-                          <span style={{ fontSize: 13.5, color: "rgba(255,255,255,0.68)", lineHeight: 1.4 }}>
+                          <span style={{ fontSize: 13.5, color: "rgba(30,40,80,0.6)", lineHeight: 1.4 }}>
                             {f}
                           </span>
                         </div>
@@ -409,7 +409,7 @@ export default function IndustriesScene() {
                     {/* Row 3: click hint */}
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                       <span style={{
-                        fontSize: 11, color: "rgba(255,255,255,0.22)",
+                        fontSize: 11, color: "rgba(30,40,80,0.3)",
                         textTransform: "uppercase", letterSpacing: "0.09em",
                       }}>
                         {isFront ? "Click to explore next →" : ""}
@@ -450,12 +450,12 @@ export default function IndustriesScene() {
             </div>
 
             {/* Industry name */}
-            <h2 style={{ fontSize: 34, fontWeight: 900, color: "#fff", lineHeight: 1.1, marginBottom: 16 }}>
+            <h2 style={{ fontSize: 34, fontWeight: 900, color: "#1a2236", lineHeight: 1.1, marginBottom: 16 }}>
               {current.name}
             </h2>
 
             {/* Description */}
-            <p style={{ color: "rgba(255,255,255,0.48)", fontSize: 15, lineHeight: 1.65, marginBottom: 28 }}>
+            <p style={{ color: "rgba(30,40,80,0.5)", fontSize: 15, lineHeight: 1.65, marginBottom: 28 }}>
               Autonex deploys custom-trained AI models for{" "}
               {current.name.toLowerCase()}, running on your existing cameras, sensors, and ERP without disruption.
             </p>
@@ -468,7 +468,7 @@ export default function IndustriesScene() {
               marginBottom: 36,
             }}>
               <span style={{ fontSize: 22, fontWeight: 900, color: current.color }}>{current.stat}</span>
-              <span style={{ fontSize: 13, color: "rgba(255,255,255,0.5)" }}>{current.statLabel}</span>
+              <span style={{ fontSize: 13, color: "rgba(30,40,80,0.5)" }}>{current.statLabel}</span>
             </div>
           </div>
 
@@ -514,7 +514,7 @@ export default function IndustriesScene() {
                     }}
                     style={{
                       width: isActive ? 28 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer",
-                      background: isActive ? current.color : "rgba(255,255,255,0.15)",
+                      background: isActive ? current.color : "rgba(30,40,80,0.15)",
                       transition: "all 0.35s ease", padding: 0,
                     }}
                   />
