@@ -266,7 +266,7 @@ function ActiveCard({ card }: { card: typeof CARDS[0] }) {
       {/* Tag label */}
       <div style={{ padding: "20px 24px 0" }}>
         <span style={{
-          fontSize: 9, fontWeight: 900, letterSpacing: "0.2em",
+          fontSize: 9, fontWeight: 500, letterSpacing: "0.2em",
           color, background: `${color}15`,
           border: `1px solid ${color}30`,
           padding: "4px 10px", borderRadius: 99,
@@ -292,7 +292,7 @@ function ActiveCard({ card }: { card: typeof CARDS[0] }) {
           {/* Big stat */}
           <div style={{ textAlign: "right" }}>
             <div style={{
-              fontSize: 52, fontWeight: 900, lineHeight: 1,
+              fontSize: 52, fontWeight: 500, lineHeight: 1,
               background: `linear-gradient(135deg, #1a2236 0%, ${color} 100%)`,
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
               letterSpacing: "-0.03em",
@@ -310,7 +310,7 @@ function ActiveCard({ card }: { card: typeof CARDS[0] }) {
 
         {/* Text */}
         <div>
-          <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "#1a2236", lineHeight: 1.25, marginBottom: 10 }}>
+          <h3 style={{ fontSize: "1.35rem", fontWeight: 500, color: "#1a2236", lineHeight: 1.25, marginBottom: 10 }}>
             {title}
           </h3>
           <p style={{ fontSize: "0.85rem", lineHeight: 1.65, color: "rgba(30,40,80,0.55)" }}>
@@ -372,7 +372,7 @@ function SideCard({ card }: { card: typeof CARDS[0] }) {
           <Icon size={20} style={{ color }} strokeWidth={1.5} />
         </div>
         <div style={{
-          fontSize: 26, fontWeight: 900, color,
+          fontSize: 26, fontWeight: 500, color,
           letterSpacing: "-0.03em", lineHeight: 1,
         }}>
           {stat}

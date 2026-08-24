@@ -224,7 +224,7 @@ export default function PainPoints() {
                   <div
                     className="absolute top-4 left-8 leading-none tracking-tighter select-none pointer-events-none"
                     style={{
-                      fontSize: "11rem", fontWeight: 900, lineHeight: 1,
+                      fontSize: "11rem", fontWeight: 500, lineHeight: 1,
                       color: "transparent",
                       WebkitTextStroke: `1px ${step.solution.color}10`,
                     }}

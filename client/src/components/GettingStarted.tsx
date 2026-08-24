@@ -271,7 +271,7 @@ export default function GettingStarted() {
                   }} />
                   <span style={{
                     display: "inline-block",
-                    fontSize: "0.65rem", fontWeight: 800,
+                    fontSize: "0.65rem", fontWeight: 500,
                     letterSpacing: "0.2em", textTransform: "uppercase" as const,
                     padding: "0.3rem 0.75rem", borderRadius: 999,
                     background: `${step.color}15`, border: `1px solid ${step.color}40`,
@@ -280,7 +280,7 @@ export default function GettingStarted() {
                     {step.timeframe}
                   </span>
                   <h3 style={{
-                    fontSize: "1.4rem", fontWeight: 900, color: "#1a2236",
+                    fontSize: "1.4rem", fontWeight: 500, color: "#1a2236",
                     letterSpacing: "-0.02em", marginBottom: "0.65rem",
                   }}>
                     {step.heading}

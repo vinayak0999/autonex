@@ -135,7 +135,7 @@ export default function HorizontalTextReveal({
           WebkitTextFillColor:  "transparent",
           backgroundClip:       "text",
           fontSize:     "clamp(3.5rem, 11vw, 10rem)",
-          fontWeight:   900,
+          fontWeight: 500,
           lineHeight:   1.05,
           letterSpacing: "-0.03em",
           userSelect:   "none",

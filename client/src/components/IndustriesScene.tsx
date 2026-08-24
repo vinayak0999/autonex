@@ -368,7 +368,7 @@ export default function IndustriesScene() {
                         }}>
                           <Icon style={{ width: 24, height: 24, color: ind.color }} />
                         </div>
-                        <h3 style={{ fontSize: 22, fontWeight: 800, color: "#1a2236", lineHeight: 1.15, margin: 0 }}>
+                        <h3 style={{ fontSize: 22, fontWeight: 500, color: "#1a2236", lineHeight: 1.15, margin: 0 }}>
                           {ind.name}
                         </h3>
                       </div>
@@ -376,7 +376,7 @@ export default function IndustriesScene() {
                       {/* Big stat badge */}
                       <div style={{ textAlign: "right", flexShrink: 0 }}>
                         <div style={{
-                          fontSize: 36, fontWeight: 900, color: ind.color, lineHeight: 1,
+                          fontSize: 36, fontWeight: 500, color: ind.color, lineHeight: 1,
                           // drop-shadow is expensive on mobile — skip it
                           filter: dims.w >= BASE_CARD_W ? `drop-shadow(0 0 10px ${ind.color}70)` : undefined,
                         }}>
@@ -450,7 +450,7 @@ export default function IndustriesScene() {
             </div>
 
             {/* Industry name */}
-            <h2 style={{ fontSize: 34, fontWeight: 900, color: "#1a2236", lineHeight: 1.1, marginBottom: 16 }}>
+            <h2 style={{ fontSize: 34, fontWeight: 500, color: "#1a2236", lineHeight: 1.1, marginBottom: 16 }}>
               {current.name}
             </h2>
 
@@ -467,7 +467,7 @@ export default function IndustriesScene() {
               background: `${current.color}10`, border: `1px solid ${current.color}30`,
               marginBottom: 36,
             }}>
-              <span style={{ fontSize: 22, fontWeight: 900, color: current.color }}>{current.stat}</span>
+              <span style={{ fontSize: 22, fontWeight: 500, color: current.color }}>{current.stat}</span>
               <span style={{ fontSize: 13, color: "rgba(30,40,80,0.5)" }}>{current.statLabel}</span>
             </div>
           </div>

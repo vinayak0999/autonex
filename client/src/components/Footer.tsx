@@ -273,8 +273,8 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             >
               <h2
                 style={{
-                  fontFamily:    "'Inter', system-ui, -apple-system, sans-serif",
-                  fontWeight:    900,
+                  
+                  fontWeight: 500,
                   textTransform: "uppercase",
                   lineHeight:    0.95,
                   color:         "#1a2236",
