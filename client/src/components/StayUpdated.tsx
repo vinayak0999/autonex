@@ -17,7 +17,7 @@ export default function StayUpdated() {
         transition={{ duration: 0.6 }}
       >
         <div className="relative mx-auto w-full px-4 sm:px-8 md:px-14 py-10 md:py-14">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-[#1a2236]">
+          <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-4 text-[#1a2236]">
             Stay <span className="text-[#163791]">Updated</span>
           </h2>
           <p className="text-lg md:text-xl text-[rgba(30,40,80,0.65)] mb-8 max-w-3xl mx-auto">

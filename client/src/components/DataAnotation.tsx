@@ -97,7 +97,7 @@ export default function DataAnotations() {
               </svg>
             </div>
             <div className="absolute inset-[35%] rounded-full bg-gradient-to-br from-secondary/30 to-tertiary/20 shadow-[0_0_40px_8px_rgba(98,170,222,0.4)] animate-pulse border border-tertiary/30">
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-secondary/40 to-tertiary/30 shadow-[inset_0_0_15px_rgba(98,170,222,0.5)] flex items-center justify-center text-tertiary font-bold text-3xl sm:text-4xl drop-shadow-[0_0_10px_rgba(98,170,222,0.6)]">AI</div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-secondary/40 to-tertiary/30 shadow-[inset_0_0_15px_rgba(98,170,222,0.5)] flex items-center justify-center text-tertiary font-medium text-3xl sm:text-4xl drop-shadow-[0_0_10px_rgba(98,170,222,0.6)]">AI</div>
             </div>
             <div className="absolute inset-[20%] border border-tertiary/30 rounded-full" style={{ transform: 'rotateX(75deg)', animation: 'spin-horizontal 10s linear infinite' }} />
             <div className="absolute inset-[20%] border border-tertiary/30 rounded-full" style={{ transform: 'rotateY(75deg)', animation: 'spin-vertical 12s linear infinite' }} />
@@ -160,7 +160,7 @@ export default function DataAnotations() {
                           <ArrowUpRight className="h-6 w-6 text-tertiary drop-shadow-[0_0_6px_rgba(98,170,222,0.5)]" />
                         </motion.div>
                       </div>
-                      <CardTitle className="text-xl text-foreground group-hover:text-tertiary transition-colors duration-300 drop-shadow-lg font-bold" data-testid={`text-service-title-${index}`}>
+                      <CardTitle className="text-xl text-foreground group-hover:text-tertiary transition-colors duration-300 drop-shadow-lg font-medium" data-testid={`text-service-title-${index}`}>
                         {service.title}
                       </CardTitle>
                     </CardHeader>

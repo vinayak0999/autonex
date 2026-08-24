@@ -439,7 +439,7 @@ export default function ServicesScene() {
           </div>
         </div>
         <h2
-          className="text-4xl sm:text-5xl lg:text-[4.5rem] font-black text-[#1a2236] leading-[1.05]"
+          className="text-4xl sm:text-5xl lg:text-[4.5rem] font-medium text-[#1a2236] leading-[1.05]"
           style={{ letterSpacing: "-0.025em" }}
         >
           Four products.<br />One platform.
@@ -452,7 +452,7 @@ export default function ServicesScene() {
           <button
             key={prod.id}
             onClick={() => transitionTo(i)}
-            className="text-[11px] font-bold tracking-wider px-4 py-1.5 rounded-full whitespace-nowrap"
+            className="text-[11px] font-medium tracking-wider px-4 py-1.5 rounded-full whitespace-nowrap"
             style={{
               background: i === active ? `${prod.color}20` : "rgba(22,55,145,0.03)",
               border:     `1px solid ${i === active ? prod.color + "55" : "rgba(22,55,145,0.1)"}`,
@@ -590,7 +590,7 @@ export default function ServicesScene() {
                         background: `radial-gradient(ellipse at center, ${prod.color}10 0%, transparent 70%)`,
                       }}
                     >
-                      <p className="text-[10px] font-black tracking-[0.22em] uppercase"
+                      <p className="text-[10px] font-medium tracking-[0.22em] uppercase"
                          style={{ color: 'rgba(255,255,255,0.18)' }}>
                         Video coming soon
                       </p>
@@ -614,7 +614,7 @@ export default function ServicesScene() {
                   className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-2"
                   style={{ background: "rgba(2,5,14,0.82)", backdropFilter: "blur(8px)" }}
                 >
-                  <span className="text-[10px] font-mono font-bold tracking-widest" style={{ color: p.color, transition: "color 0.4s" }}>
+                  <span className="text-[10px] font-mono font-medium tracking-widest" style={{ color: p.color, transition: "color 0.4s" }}>
                     AUTONEX · {p.name}
                   </span>
                   <div className="flex items-center gap-1.5">
@@ -688,14 +688,14 @@ export default function ServicesScene() {
               >
                 <Icon className="w-4 h-4" style={{ color: p.color }} />
               </div>
-              <span className="text-[10px] font-black tracking-[0.28em] uppercase" style={{ color: p.color, transition: "color 0.4s" }}>
+              <span className="text-[10px] font-medium tracking-[0.28em] uppercase" style={{ color: p.color, transition: "color 0.4s" }}>
                 Step {p.step}
               </span>
             </div>
 
             {/* Name */}
             <h3
-              className="psc-item text-4xl md:text-5xl font-black text-[#1a2236] leading-none mb-1"
+              className="psc-item text-4xl md:text-5xl font-medium text-[#1a2236] leading-none mb-1"
               style={{ letterSpacing: "-0.025em" }}
             >
               {p.name}
@@ -715,12 +715,12 @@ export default function ServicesScene() {
                   transition: "all 0.4s",
                 }}>
                 <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: p.color }} />
-                <span className="text-[10px] font-black tracking-wider uppercase" style={{ color: p.color }}>
+                <span className="text-[10px] font-medium tracking-wider uppercase" style={{ color: p.color }}>
                   {p.accuracy}
                 </span>
               </div>
               <span
-                className="inline-block text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full"
+                className="inline-block text-[10px] font-medium tracking-wider uppercase px-2.5 py-1 rounded-full"
                 style={{
                   background: `${p.color}15`,
                   border: `1px solid ${p.color}40`,
@@ -735,7 +735,7 @@ export default function ServicesScene() {
             {/* Headline hook */}
             {p.headline ? (
               <p
-                className="psc-item text-lg md:text-xl font-black text-[#1a2236] leading-snug mb-2"
+                className="psc-item text-lg md:text-xl font-medium text-[#1a2236] leading-snug mb-2"
                 style={{ letterSpacing: "-0.01em", whiteSpace: "pre-line" }}
               >
                 {p.headline}
@@ -787,7 +787,7 @@ export default function ServicesScene() {
               <div className="flex items-start gap-2.5">
                 <Zap className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: p.color }} />
                 <div>
-                  <p className="text-[9px] font-black tracking-widest uppercase mb-0.5" style={{ color: p.color }}>
+                  <p className="text-[9px] font-medium tracking-widest uppercase mb-0.5" style={{ color: p.color }}>
                     Real result
                   </p>
                   <p className="text-[13px] font-semibold text-[rgba(30,40,80,0.85)]">
@@ -816,7 +816,7 @@ export default function ServicesScene() {
                   }}
                 />
               ))}
-              <span className="text-[10px] font-bold tracking-wider ml-1 text-[rgba(30,40,80,0.4)]">
+              <span className="text-[10px] font-medium tracking-wider ml-1 text-[rgba(30,40,80,0.4)]">
                 Scroll to advance
               </span>
             </div>

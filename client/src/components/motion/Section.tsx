@@ -210,7 +210,7 @@ export function SectionHeader({
           <h2
             ref={titleRef}
             className={cn(
-              "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground inline-block relative z-10 m-0 p-0",
+              "text-4xl md:text-5xl lg:text-6xl font-medium leading-tight text-foreground inline-block relative z-10 m-0 p-0",
               titleClassName
             )}
             style={{ textShadow: "0 0 12px rgba(255,255,255,0.06)" }}

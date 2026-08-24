@@ -181,7 +181,7 @@ export default function PainPoints() {
           </div>
         </div>
 
-        <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-[1.05] text-[#1a2236]">
+        <h2 className="text-5xl md:text-7xl font-medium tracking-tight mb-6 leading-[1.05] text-[#1a2236]">
           Identify the Friction.<br />
           <span className="bg-gradient-to-br from-[#163791] to-[#62AADE] bg-clip-text text-transparent">
             Deploy the Solution.
@@ -236,7 +236,7 @@ export default function PainPoints() {
                     {/* Phase label */}
                     <div className="reveal-element flex items-center gap-3 mb-8">
                       <span
-                        className="text-sm font-black tracking-widest uppercase"
+                        className="text-sm font-medium tracking-widest uppercase"
                         style={{ color: `${step.solution.color}80` }}
                       >
                         Phase {step.step}
@@ -245,7 +245,7 @@ export default function PainPoints() {
                     </div>
 
                     <h3
-                      className="reveal-element text-3xl md:text-4xl font-black text-[#1a2236] mb-5 leading-tight"
+                      className="reveal-element text-3xl md:text-4xl font-medium text-[#1a2236] mb-5 leading-tight"
                       style={{ letterSpacing: "-0.02em" }}
                     >
                       {step.problem.headline}
@@ -259,13 +259,13 @@ export default function PainPoints() {
                     {/* Stat */}
                     <div className="reveal-element flex flex-col gap-1">
                       <div
-                        className="font-black tracking-tight leading-none"
+                        className="font-medium tracking-tight leading-none"
                         style={{ fontSize: "5rem", color: step.solution.color, letterSpacing: "-0.04em" }}
                       >
                         {step.problem.stat}
                       </div>
                       <div
-                        className="text-sm font-bold uppercase tracking-wider max-w-[220px] text-[rgba(30,40,80,0.5)]"
+                        className="text-sm font-medium uppercase tracking-wider max-w-[220px] text-[rgba(30,40,80,0.5)]"
                       >
                         {step.problem.statLabel}
                       </div>
@@ -290,14 +290,14 @@ export default function PainPoints() {
                           <Icon className="w-6 h-6" />
                         </div>
                         <h4
-                          className="text-2xl md:text-3xl font-black text-[#1a2236]"
+                          className="text-2xl md:text-3xl font-medium text-[#1a2236]"
                           style={{ letterSpacing: "-0.01em" }}
                         >
                           {step.solution.name}
                         </h4>
                       </div>
                       <div
-                        className="px-3 py-1.5 rounded-full text-[11px] font-black tracking-widest uppercase whitespace-nowrap"
+                        className="px-3 py-1.5 rounded-full text-[11px] font-medium tracking-widest uppercase whitespace-nowrap"
                         style={{
                           background: `${step.solution.color}12`,
                           border: `1px solid ${step.solution.color}35`,
@@ -340,7 +340,7 @@ export default function PainPoints() {
                         style={{ background: step.solution.color }}
                       />
                       <div
-                        className="text-[10px] uppercase tracking-widest mb-2 font-black flex items-center gap-2 pl-4"
+                        className="text-[10px] uppercase tracking-widest mb-2 font-medium flex items-center gap-2 pl-4"
                         style={{ color: step.solution.color }}
                       >
                         <ChevronRight className="w-3 h-3" /> Verified Impact

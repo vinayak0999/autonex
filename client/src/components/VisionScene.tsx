@@ -127,7 +127,7 @@ export default function VisionScene() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight" style={{ color: "#1a2236" }}
+          className="text-5xl sm:text-6xl lg:text-7xl font-medium leading-[1.02] tracking-tight" style={{ color: "#1a2236" }}
         >
           Deep tech.<br />
           <span style={{

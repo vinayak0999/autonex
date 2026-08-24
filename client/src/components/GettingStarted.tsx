@@ -159,7 +159,7 @@ export default function GettingStarted() {
               <span className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "#163791" }}>Getting Started</span>
             </div>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05]"
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium leading-[1.05]"
               style={{ color: "#1a2236", letterSpacing: "-0.025em" }}>
             Simple to start.<br />
             <span style={{ color: "#60a5fa" }}>Proven to deliver.</span>
@@ -298,7 +298,7 @@ export default function GettingStarted() {
         <div className="gs-cta mt-24 text-center">
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-base transition-transform duration-200 hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-medium text-base transition-transform duration-200 hover:scale-105 active:scale-95"
             style={{
               background: "linear-gradient(135deg, #1e3a8a 0%, #60a5fa 100%)",
               boxShadow:  "0 0 40px rgba(30,58,138,0.5), 0 0 80px rgba(96,165,250,0.15)",

@@ -250,7 +250,7 @@ export default function ProofSection() {
                   {/* Product + Industry — stacked so long names never crowd */}
                   <div className="flex flex-col gap-2 mb-8">
                     <span
-                      className="text-[11px] font-black tracking-[0.18em] uppercase px-3 py-1.5 rounded-full whitespace-nowrap self-start"
+                      className="text-[11px] font-medium tracking-[0.18em] uppercase px-3 py-1.5 rounded-full whitespace-nowrap self-start"
                       style={{
                         background: `${r.color}18`,
                         border:     `1px solid ${r.color}40`,
@@ -268,7 +268,7 @@ export default function ProofSection() {
                   <div className="mb-1">
                     <span
                       ref={el => { metricRefs.current[i] = el; }}
-                      className="text-[4rem] font-black leading-none"
+                      className="text-[4rem] font-medium leading-none"
                       style={{ color: r.color, letterSpacing: "-0.04em" }}
                     >
                       0
@@ -277,7 +277,7 @@ export default function ProofSection() {
 
                   {/* Label */}
                   <div
-                    className="text-sm font-bold uppercase tracking-[0.15em] mb-5 text-[rgba(30,40,80,0.7)]"
+                    className="text-sm font-medium uppercase tracking-[0.15em] mb-5 text-[rgba(30,40,80,0.7)]"
                   >
                     {r.label}
                   </div>
@@ -297,7 +297,7 @@ export default function ProofSection() {
                       className="w-1.5 h-1.5 rounded-full animate-pulse"
                       style={{ background: r.color }}
                     />
-                    <span className="text-[9px] font-bold tracking-widest uppercase" style={{ color: `${r.color}88` }}>
+                    <span className="text-[9px] font-medium tracking-widest uppercase" style={{ color: `${r.color}88` }}>
                       Live result
                     </span>
                   </div>

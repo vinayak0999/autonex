@@ -190,7 +190,7 @@ export default function HeroScene() {
 
               {/* Headline — each line wrapped in overflow:hidden container for clip-reveal */}
               <div>
-                <h1 className="text-3xl sm:text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter mb-6">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-medium leading-[1.1] tracking-tighter mb-6">
                   <span className="block overflow-hidden">
                     <span ref={line1Ref} className="block" style={{ color: "#1a2236" }}>AI PRODUCTS</span>
                   </span>
@@ -222,7 +222,7 @@ export default function HeroScene() {
                 <a href="/contact" className="w-full sm:w-auto">
                   <button
                     id="hero-cta-primary"
-                    className="group relative text-base px-8 py-4 rounded-full font-bold w-full sm:w-auto overflow-hidden flex items-center justify-center gap-2 transition-transform duration-200 hover:scale-105 active:scale-95"
+                    className="group relative text-base px-8 py-4 rounded-full font-medium w-full sm:w-auto overflow-hidden flex items-center justify-center gap-2 transition-transform duration-200 hover:scale-105 active:scale-95"
                     style={{ background: "linear-gradient(135deg, #163791 0%, #62AADE 100%)", boxShadow: "0 0 40px rgba(22,55,145,0.5), 0 0 80px rgba(98,170,222,0.2)", color: "#fff" }}
                     onMouseEnter={(e) => { gsap.to(e.currentTarget.querySelector(".btn-shimmer"), { x: "200%", duration: 0.5, ease: "power2.inOut" }); }}
                     onMouseLeave={(e) => { gsap.set(e.currentTarget.querySelector(".btn-shimmer"), { x: "-100%" }); }}
@@ -234,7 +234,7 @@ export default function HeroScene() {
                 <a href="/contact" className="w-full sm:w-auto">
                   <button
                     id="hero-cta-secondary"
-                    className="group text-base px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 w-full sm:w-auto transition-all duration-200 hover:scale-105 active:scale-95"
+                    className="group text-base px-8 py-4 rounded-full font-medium flex items-center justify-center gap-2 w-full sm:w-auto transition-all duration-200 hover:scale-105 active:scale-95"
                     style={{ background: "rgba(22,55,145,0.06)", border: "1.5px solid rgba(22,55,145,0.25)", color: "#163791", backdropFilter: "blur(12px)" }}
                     onMouseEnter={(e) => { gsap.to(e.currentTarget, { borderColor: "rgba(22,55,145,0.6)", boxShadow: "0 0 20px rgba(22,55,145,0.15)", duration: 0.3 }); }}
                     onMouseLeave={(e) => { gsap.to(e.currentTarget, { borderColor: "rgba(22,55,145,0.25)", boxShadow: "none", duration: 0.3 }); }}

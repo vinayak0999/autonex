@@ -93,7 +93,7 @@ export default function StatsStrip() {
               key={i}
               className="stat-item flex flex-col items-center text-center px-6 py-4 group"
             >
-              <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2 leading-none">
+              <div className="text-4xl md:text-5xl font-medium tracking-tight mb-2 leading-none">
                 <span className="stat-prefix text-[rgba(30,40,80,0.6)] text-2xl md:text-3xl font-semibold">{stat.prefix}</span>
                 <span
                   className="stat-num bg-gradient-to-br from-[#163791] to-[#62AADE] bg-clip-text text-transparent"

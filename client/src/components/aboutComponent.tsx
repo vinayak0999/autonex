@@ -107,7 +107,7 @@ export default function AboutComponent() {
               </svg>
             </div>
             <div className="absolute inset-[35%] rounded-full bg-gradient-to-br from-secondary/30 to-tertiary/20 shadow-[0_0_40px_8px_rgba(98,170,222,0.4)] animate-pulse border border-tertiary/30">
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-secondary/40 to-tertiary/30 shadow-[inset_0_0_15px_rgba(98,170,222,0.5)] flex items-center justify-center text-tertiary font-bold text-3xl sm:text-4xl drop-shadow-[0_0_10px_rgba(98,170,222,0.6)]">AI</div>
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-secondary/40 to-tertiary/30 shadow-[inset_0_0_15px_rgba(98,170,222,0.5)] flex items-center justify-center text-tertiary font-medium text-3xl sm:text-4xl drop-shadow-[0_0_10px_rgba(98,170,222,0.6)]">AI</div>
             </div>
             <div className="absolute inset-[20%] border border-tertiary/30 rounded-full" style={{ transform: 'rotateX(75deg)', animation: 'spin-horizontal 10s linear infinite' }} />
             <div className="absolute inset-[20%] border border-tertiary/30 rounded-full" style={{ transform: 'rotateY(75deg)', animation: 'spin-vertical 12s linear infinite' }} />
@@ -149,7 +149,7 @@ export default function AboutComponent() {
                             className={`${(member.name === "Jaideep Singh" || member.name === "Nikhil Gawade") ? "w-56 h-56 rounded-xl" : "w-40 h-40 rounded-full"} object-cover shadow-md grayscale hover:grayscale-0 group-hover:grayscale-0 transition-[filter,transform] duration-500 ease-out will-change-transform group-hover:scale-105 border border-secondary/20`}
                           />
                         </div>
-                        <h3 className="text-3xl font-bold text-foreground mb-2 group-hover:text-tertiary transition-colors duration-300">{member.name}</h3>
+                        <h3 className="text-3xl font-medium text-foreground mb-2 group-hover:text-tertiary transition-colors duration-300">{member.name}</h3>
                         <div className="text-secondary font-semibold mb-6">{member.role}</div>
                         <p className="text-foreground/70 text-lg leading-relaxed mb-6">{member.description}</p>
                         {member.educationLines && (
@@ -267,7 +267,7 @@ export default function AboutComponent() {
                   <Award className="w-9 h-9 text-secondary" />
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-[#62AADE] transition-colors duration-300">
+                <h3 className="text-xl font-medium text-foreground mb-1 group-hover:text-[#62AADE] transition-colors duration-300">
                   {advisor.name}
                 </h3>
                 <p className="text-secondary font-semibold text-sm mb-1">{advisor.title}</p>
