@@ -257,9 +257,7 @@ export default function GettingStarted() {
                 {/* Card */}
                 <div style={{
                   borderRadius: 16, padding: "1.5rem",
-                  background: "rgba(248,250,252,0.95)",
-                  border: "1px solid rgba(22,55,145,0.1)",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                  background: "rgba(255,255,255,0.8)",
                   border: `1px solid ${step.color}20`,
                   boxShadow: `0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 ${step.color}10`,
                   backdropFilter: "blur(8px)",

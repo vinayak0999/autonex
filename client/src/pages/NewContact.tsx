@@ -497,10 +497,8 @@ export default function NewContact() {
             </div>
 
 
-
             </div>
           </div>
-        </div>
         <StayUpdated />
       </main>
       <Footer hideCta />
