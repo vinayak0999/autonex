@@ -7,6 +7,7 @@ import ProofSection from "@/components/ProofSection";
 import VisionScene from "@/components/VisionScene";
 import GettingStarted from "@/components/GettingStarted";
 import IndustriesScene from "@/components/IndustriesScene";
+import StayUpdated from "@/components/StayUpdated";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
 
@@ -33,6 +34,7 @@ export default function Home() {
         <VisionScene />
         <GettingStarted />
         <IndustriesScene />
+        <StayUpdated />
       </main>
       <Footer />
     </div>

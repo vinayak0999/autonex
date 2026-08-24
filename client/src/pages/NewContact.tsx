@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { buildApiUrl } from "@/lib/apiConfig";
 import heroImg from "@assets/generated_images/Industrial_monitoring_dashboard_mockup_02e09966.jpeg";
 import { Sparkles } from "lucide-react";
+import StayUpdated from "@/components/StayUpdated";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -497,76 +498,10 @@ export default function NewContact() {
 
 
 
-            <div className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden mt-32">
-              <div className="absolute inset-0"
-                style={{
-                  background: "linear-gradient(180deg, transparent 0%, hsl(var(--background)/0.1) 15%, hsl(var(--card)/0.2) 30%, hsl(220, 73%, 33%, 0.15) 50%, hsl(220, 73%, 33%, 0.3) 75%, hsl(220, 73%, 33%, 0.5) 100%)"
-                }}
-              />
-              <div className="pointer-events-none absolute inset-0"
-                style={{
-                  background: "linear-gradient(45deg, transparent 0%, hsl(220, 73%, 33%, 0.05) 50%, transparent 100%)",
-                  maskImage: "linear-gradient(to bottom, transparent 0%, black 20%, black 100%)"
-                }}
-              />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-hsl(var(--background)) to-transparent" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-[radial-gradient(60%_100%_at_50%_100%,hsl(220, 73%, 33%, 0.15),transparent_70%)]" />
-
-              <motion.div
-                className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 text-center text-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="relative mx-auto w-full px-4 sm:px-8 md:px-14 py-10 md:py-14">
-                  <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white">
-                    Stay <span className="text-secondary">Updated</span>
-                  </h2>
-                  <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-                    Subscribe to our newsletter to receive the latest updates, insights,
-                    and news about our services and technologies.
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-white/80">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                      <span>No spam</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                      <span>Unsubscribe anytime</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                      <span>Max twice a month</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col xs:flex-row w-full max-w-md mx-auto items-stretch gap-2">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="flex-grow bg-zinc-900/70 backdrop-blur-sm border border-secondary/40 rounded-lg px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-secondary/70 focus:border-secondary/70 shadow-xl focus:shadow-2xl transition-all duration-300"
-                    />
-                    <button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 whitespace-nowrap">
-                      Subscribe
-                    </button>
-                  </div>
-
-                  <p className="text-sm text-white/60 mt-4 max-w-md mx-auto text-left">
-                    By subscribing, you agree to our <a href="#" className="text-secondary hover:underline">Privacy Policy</a>
-                  </p>
-                </div>
-              </motion.div>
-
-              <div className="absolute inset-x-0 bottom-0 h-24" style={{
-                background: "linear-gradient(180deg, transparent 0%, hsl(var(--background)/0.6) 50%, hsl(var(--background)/0.3) 100%)",
-                clipPath: "polygon(0 0, 100% 0, 85% 100%, 15% 100%)"
-              }} />
             </div>
           </div>
         </div>
+        <StayUpdated />
       </main>
       <Footer hideCta />
     </div>

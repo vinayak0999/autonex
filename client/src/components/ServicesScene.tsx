@@ -391,7 +391,7 @@ export default function ServicesScene() {
       ref={sectionRef}
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, rgba(3,7,18,0) 0%, rgba(5,10,22,0.8) 20%, rgba(5,10,22,0.8) 80%, rgba(3,7,18,0) 100%)",
+        background: "transparent",
       }}
     >
       {/* ── CSS ──────────────────────────────────────────────────────────── */}
@@ -432,15 +432,14 @@ export default function ServicesScene() {
       {/* ── Section heading — scrolls normally, NOT pinned ──────────────── */}
       <div className="sv-header text-center px-6 pt-28 pb-4">
         {/* Aurora badge */}
-        <div className="relative inline-flex items-center justify-center p-[1.5px] mb-6 overflow-hidden rounded-full">
-          <div className="absolute top-1/2 left-1/2 w-[200%] h-[400%]" style={{ background: "conic-gradient(from 0deg at 50% 50%, rgba(98,170,222,0.6), rgba(22,55,145,0.2), rgba(98,170,222,0.6))", animation: "rotateAurora 4s linear infinite" }} />
-          <div className="relative flex items-center px-5 py-2.5 rounded-full" style={{ background: "rgba(6,13,31,0.9)", backdropFilter: "blur(12px)" }}>
-            <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#62AADE" }} />
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white">Our Products</span>
+        <div className="relative inline-flex items-center justify-center p-[1px] mb-6 overflow-hidden rounded-full border border-[rgba(22,55,145,0.1)] shadow-sm bg-white">
+          <div className="relative flex items-center px-5 py-2.5 rounded-full bg-white">
+            <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#163791" }} />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1a2236]">Our Products</span>
           </div>
         </div>
         <h2
-          className="text-4xl sm:text-5xl lg:text-[4.5rem] font-black text-white leading-[1.05]"
+          className="text-4xl sm:text-5xl lg:text-[4.5rem] font-black text-[#1a2236] leading-[1.05]"
           style={{ letterSpacing: "-0.025em" }}
         >
           Four products.<br />One platform.
@@ -455,9 +454,9 @@ export default function ServicesScene() {
             onClick={() => transitionTo(i)}
             className="text-[11px] font-bold tracking-wider px-4 py-1.5 rounded-full whitespace-nowrap"
             style={{
-              background: i === active ? `${prod.color}20` : "rgba(255,255,255,0.05)",
-              border:     `1px solid ${i === active ? prod.color + "55" : "rgba(255,255,255,0.1)"}`,
-              color:      i === active ? prod.color : "rgba(255,255,255,0.35)",
+              background: i === active ? `${prod.color}20` : "rgba(22,55,145,0.03)",
+              border:     `1px solid ${i === active ? prod.color + "55" : "rgba(22,55,145,0.1)"}`,
+              color:      i === active ? prod.color : "rgba(30,40,80,0.5)",
               transition: "all 0.35s",
               transform:  i === active ? "scale(1.06)" : "scale(1)",
             }}
@@ -663,7 +662,7 @@ export default function ServicesScene() {
                   width:  i === active ? 22 : 7,
                   height: 7,
                   borderRadius: 4,
-                  background: i === active ? prod.color : 'rgba(255,255,255,0.18)',
+                  background: i === active ? prod.color : 'rgba(22,55,145,0.15)',
                   border: 'none',
                   padding: 0,
                   cursor: 'pointer',
@@ -696,14 +695,14 @@ export default function ServicesScene() {
 
             {/* Name */}
             <h3
-              className="psc-item text-4xl md:text-5xl font-black text-white leading-none mb-1"
+              className="psc-item text-4xl md:text-5xl font-black text-[#1a2236] leading-none mb-1"
               style={{ letterSpacing: "-0.025em" }}
             >
               {p.name}
             </h3>
 
             {/* Subtitle */}
-            <p className="psc-item text-xs mb-2" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <p className="psc-item text-xs mb-2 text-[rgba(30,40,80,0.6)]">
               {p.fullName}
             </p>
 
@@ -736,7 +735,7 @@ export default function ServicesScene() {
             {/* Headline hook */}
             {p.headline ? (
               <p
-                className="psc-item text-lg md:text-xl font-black text-white leading-snug mb-2"
+                className="psc-item text-lg md:text-xl font-black text-[#1a2236] leading-snug mb-2"
                 style={{ letterSpacing: "-0.01em", whiteSpace: "pre-line" }}
               >
                 {p.headline}
@@ -744,13 +743,13 @@ export default function ServicesScene() {
             ) : null}
 
             {/* Tagline / description */}
-            <p className="psc-item text-[13px] leading-relaxed mb-2" style={{ color: "rgba(255,255,255,0.52)" }}>
+            <p className="psc-item text-[13px] leading-relaxed mb-2 text-[rgba(30,40,80,0.65)]">
               {p.tagline}
             </p>
 
             {/* Subtext kicker (VIGIL only) */}
             {p.subtext ? (
-              <p className="psc-item text-[12px] font-semibold mb-3" style={{ color: "rgba(255,255,255,0.72)" }}>
+              <p className="psc-item text-[12px] font-semibold mb-3 text-[rgba(30,40,80,0.85)]">
                 {p.subtext}
               </p>
             ) : null}
@@ -769,7 +768,7 @@ export default function ServicesScene() {
                     className="w-3.5 h-3.5 flex-shrink-0 mt-0.5"
                     style={{ color: p.color, transition: "color 0.4s" }}
                   />
-                  <span className="text-[12.5px] leading-snug" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <span className="text-[12.5px] leading-snug text-[rgba(30,40,80,0.75)]">
                     {f}
                   </span>
                 </li>
@@ -791,7 +790,7 @@ export default function ServicesScene() {
                   <p className="text-[9px] font-black tracking-widest uppercase mb-0.5" style={{ color: p.color }}>
                     Real result
                   </p>
-                  <p className="text-[13px] font-semibold" style={{ color: "rgba(255,255,255,0.72)" }}>
+                  <p className="text-[13px] font-semibold text-[rgba(30,40,80,0.85)]">
                     {p.result}
                   </p>
                 </div>
@@ -811,13 +810,13 @@ export default function ServicesScene() {
                     borderRadius: 4,
                     border:       "none",
                     cursor:       "pointer",
-                    background:   i === active ? p.color : "rgba(255,255,255,0.14)",
+                    background:   i === active ? p.color : "rgba(22,55,145,0.15)",
                     transition:   "all 0.35s ease",
                     padding:      0,
                   }}
                 />
               ))}
-              <span className="text-[10px] font-bold tracking-wider ml-1" style={{ color: "rgba(255,255,255,0.22)" }}>
+              <span className="text-[10px] font-bold tracking-wider ml-1 text-[rgba(30,40,80,0.4)]">
                 Scroll to advance
               </span>
             </div>
@@ -825,7 +824,7 @@ export default function ServicesScene() {
         </div>
 
         {/* ── Bottom progress bar ─────────────────────────────────────────── */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: "rgba(255,255,255,0.05)" }}>
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[rgba(22,55,145,0.05)]">
           <div
             className="h-full origin-left"
             style={{

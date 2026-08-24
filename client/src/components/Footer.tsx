@@ -264,12 +264,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             }} />
 
 
-            {/* Top fade to blend with section above */}
-            <div style={{
-              position: "absolute", top: 0, left: 0, right: 0, height: 80,
-              background: "linear-gradient(to bottom, var(--background, #060d1f), transparent)",
-              pointerEvents: "none",
-            }} />
+            {/* Removed top fade for clean white theme */}
 
             {/* ── Giant headline ──────────────────────────────────────────── */}
             <div
@@ -278,19 +273,19 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
             >
               <h2
                 style={{
-                  fontFamily:    "'Arial Black', 'Helvetica Neue', Impact, sans-serif",
+                  fontFamily:    "'Inter', system-ui, -apple-system, sans-serif",
                   fontWeight:    900,
                   textTransform: "uppercase",
-                  lineHeight:    0.92,
-                  color:         "#dce7f5",
-                  letterSpacing: "0.01em",
-                  textShadow:    "0 0 60px rgba(98,170,222,0.18), 0 0 20px rgba(22,55,145,0.12)",
+                  lineHeight:    0.95,
+                  color:         "#1a2236",
+                  letterSpacing: "-0.02em",
+                  textShadow:    "0 0 40px rgba(98,170,222,0.1), 0 0 10px rgba(22,55,145,0.05)",
                 }}
               >
-                <span style={{ display: "block", fontSize: "clamp(2rem, 6.5vw, 7rem)" }}>
+                <span style={{ display: "block", fontSize: "clamp(2.5rem, 8vw, 7.5rem)" }}>
                   LET&apos;S GET STARTED
                 </span>
-                <span style={{ display: "block", fontSize: "clamp(2rem, 6.5vw, 7rem)", letterSpacing: "0.06em" }}>
+                <span style={{ display: "block", fontSize: "clamp(2.5rem, 8vw, 7.5rem)", letterSpacing: "0.02em" }}>
                   TOGETHER
                 </span>
               </h2>
@@ -347,10 +342,10 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
         <div className="relative z-10">
           <div className="px-4 md:px-6 py-14">
             <div
-              className="max-w-7xl mx-auto rounded-md bg-black p-8 md:p-12 relative overflow-visible"
+              className="max-w-7xl mx-auto rounded-md bg-white border border-[rgba(22,55,145,0.1)] shadow-xl p-8 md:p-12 relative overflow-visible"
             >
               {/* < 1280px (xl) – three-column compact grid */}
-              <div className="xl:hidden text-[11px] sm:text-xs md:text-sm leading-5 text-muted-foreground">
+              <div className="xl:hidden text-[11px] sm:text-xs md:text-sm leading-5 text-[rgba(30,40,80,0.6)]">
                 <div className="grid grid-cols-3 gap-x-8 gap-y-2">
                   {/* Left: Socials (vertical) */}
                   <div className="space-y-1.5 text-left">
@@ -358,36 +353,36 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                       href="https://www.linkedin.com/company/autonex-ai/posts/?feedView=all"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block px-1 py-0.5 hover:text-foreground transition-colors"
+                      className="block px-1 py-0.5 hover:text-[#163791] transition-colors"
                     >
                       LinkedIn
                     </a>
                   </div>
                   {/* Middle: Navigation (vertical) */}
                   <div className="space-y-1.5 text-center">
-                    <button className="block px-1 py-0.5 hover:text-foreground transition-colors" onClick={() => handleNavClick('home')}>Home</button>
-                    <button className="block px-1 py-0.5 hover:text-foreground transition-colors" onClick={() => handleNavClick('why-autonex')}>Our Vision</button>
-                    <button className="block px-1 py-0.5 hover:text-foreground transition-colors" onClick={() => handleNavClick('products')}>Services</button>
-                    <button className="block px-1 py-0.5 hover:text-foreground transition-colors" onClick={() => handleNavClick('industries')}>Industries</button>
-                    <button className="block px-1 py-0.5 hover:text-foreground transition-colors" onClick={goToContact}>Contact</button>
+                    <button className="block px-1 py-0.5 hover:text-[#163791] transition-colors" onClick={() => handleNavClick('home')}>Home</button>
+                    <button className="block px-1 py-0.5 hover:text-[#163791] transition-colors" onClick={() => handleNavClick('why-autonex')}>Our Vision</button>
+                    <button className="block px-1 py-0.5 hover:text-[#163791] transition-colors" onClick={() => handleNavClick('products')}>Services</button>
+                    <button className="block px-1 py-0.5 hover:text-[#163791] transition-colors" onClick={() => handleNavClick('industries')}>Industries</button>
+                    <button className="block px-1 py-0.5 hover:text-[#163791] transition-colors" onClick={goToContact}>Contact</button>
                   </div>
                   {/* Right: Legal (vertical) */}
                   <div className="space-y-1.5 text-right">
-                    <a href="/terms" className="block px-1 py-0.5 hover:text-foreground transition-colors">Terms of Service</a>
-                    <a href="/privacy" className="block px-1 py-0.5 hover:text-foreground transition-colors">Privacy Policy</a>
+                    <a href="/terms" className="block px-1 py-0.5 hover:text-[#163791] transition-colors">Terms of Service</a>
+                    <a href="/privacy" className="block px-1 py-0.5 hover:text-[#163791] transition-colors">Privacy Policy</a>
                   </div>
                 </div>
               </div>
 
               {/* >= 1280px – single line, three groups */}
-              <div className="hidden xl:flex w-full items-center justify-between gap-x-8 gap-y-4 pl-8 pr-4 text-sm text-muted-foreground flex-wrap">
+              <div className="hidden xl:flex w-full items-center justify-between gap-x-8 gap-y-4 pl-8 pr-4 text-sm text-[rgba(30,40,80,0.6)] flex-wrap">
                 {/* Left: Socials */}
                 <div className="flex items-center gap-6 xl:gap-8 2xl:gap-12">
                   <a
                     href="https://www.linkedin.com/company/autonex-ai/posts/?feedView=all"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-foreground transition-colors"
+                    className="hover:text-[#163791] transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -395,17 +390,17 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
 
                 {/* Center: Navigation */}
                 <div className="flex items-center gap-6 xl:gap-8 2xl:gap-12">
-                  <button className="hover:text-foreground transition-colors" onClick={() => handleNavClick('home')}>Home</button>
-                  <button className="hover:text-foreground transition-colors" onClick={() => handleNavClick('why-autonex')}>Our Vision</button>
-                  <button className="hover:text-foreground transition-colors" onClick={() => handleNavClick('products')}>Services</button>
-                  <button className="hover:text-foreground transition-colors" onClick={() => handleNavClick('industries')}>Industries</button>
-                  <button className="hover:text-foreground transition-colors" onClick={goToContact}>Contact</button>
+                  <button className="hover:text-[#163791] transition-colors" onClick={() => handleNavClick('home')}>Home</button>
+                  <button className="hover:text-[#163791] transition-colors" onClick={() => handleNavClick('why-autonex')}>Our Vision</button>
+                  <button className="hover:text-[#163791] transition-colors" onClick={() => handleNavClick('products')}>Services</button>
+                  <button className="hover:text-[#163791] transition-colors" onClick={() => handleNavClick('industries')}>Industries</button>
+                  <button className="hover:text-[#163791] transition-colors" onClick={goToContact}>Contact</button>
                 </div>
 
                 {/* Right: Legal */}
                 <div className="flex items-center gap-6 xl:gap-8 2xl:gap-12">
-                  <a href="/terms" className="hover:text-foreground transition-colors">Terms of Service</a>
-                  <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+                  <a href="/terms" className="hover:text-[#163791] transition-colors">Terms of Service</a>
+                  <a href="/privacy" className="hover:text-[#163791] transition-colors">Privacy Policy</a>
                 </div>
               </div>
 
@@ -423,8 +418,8 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                       className="h-6 w-auto object-contain cursor-pointer"
                       onClick={() => handleNavClick('home')}
                     />
-                    <span className="text-muted-foreground">|</span>
-                    <p className="text-muted-foreground text-xs">© {currentYear} Autonex. All rights reserved.</p>
+                    <span className="text-[rgba(30,40,80,0.6)]">|</span>
+                    <p className="text-[rgba(30,40,80,0.6)] text-xs">© {currentYear} Autonex. All rights reserved.</p>
                   </div>
                   <div className="h-px w-4/5 bg-gray-200" />
                 </div>
@@ -438,8 +433,8 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                       className="h-6 w-auto object-contain cursor-pointer flex-shrink-0"
                       onClick={() => handleNavClick('home')}
                     />
-                    <span className="text-muted-foreground flex-shrink-0">|</span>
-                    <p className="text-muted-foreground whitespace-nowrap text-[10px] sm:text-xs md:text-sm truncate">© {currentYear} Autonex. All rights reserved.</p>
+                    <span className="text-[rgba(30,40,80,0.6)] flex-shrink-0">|</span>
+                    <p className="text-[rgba(30,40,80,0.6)] whitespace-nowrap text-[10px] sm:text-xs md:text-sm truncate">© {currentYear} Autonex. All rights reserved.</p>
                   </div>
                 </div>
               </div>
@@ -453,8 +448,8 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                     className="h-7 w-auto object-contain cursor-pointer"
                     onClick={() => handleNavClick('home')}
                   />
-                  <span className="text-muted-foreground">|</span>
-                  <p className="text-muted-foreground text-sm">© {currentYear} Autonex. All rights reserved.</p>
+                  <span className="text-[rgba(30,40,80,0.6)]">|</span>
+                  <p className="text-[rgba(30,40,80,0.6)] text-sm">© {currentYear} Autonex. All rights reserved.</p>
                 </div>
 
               </div>

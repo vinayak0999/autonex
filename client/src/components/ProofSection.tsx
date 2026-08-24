@@ -149,6 +149,9 @@ export default function ProofSection() {
       id="proof"
       ref={sectionRef}
       className="relative py-28 px-4 overflow-hidden"
+      style={{
+        background: "transparent",
+      }}
     >
       {/* Background pulse orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -163,19 +166,32 @@ export default function ProofSection() {
         {/* ── Header ────────────────────────────────────────────────── */}
         <div className="text-center mb-24">
           {/* Aurora badge */}
-          <div className="relative inline-flex items-center justify-center p-[1.5px] mb-6 overflow-hidden rounded-full">
-            <div className="absolute top-1/2 left-1/2 w-[200%] h-[400%]" style={{ background: "conic-gradient(from 0deg at 50% 50%, rgba(98,170,222,0.6), rgba(22,55,145,0.2), rgba(98,170,222,0.6))", animation: "rotateAurora 4s linear infinite" }} />
-            <div className="relative flex items-center px-5 py-2.5 rounded-full" style={{ background: "rgba(6,13,31,0.9)", backdropFilter: "blur(12px)" }}>
-              <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#62AADE" }} />
-              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white">Proof, Not Promises</span>
+          <div className="relative inline-flex items-center justify-center p-[1px] mb-6 overflow-hidden rounded-full border border-[rgba(22,55,145,0.1)] shadow-sm bg-white">
+            <div className="relative flex items-center px-5 py-2.5 rounded-full bg-white">
+              <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#163791" }} />
+              <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1a2236]">Proof, Not Promises</span>
             </div>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] mb-6"
-            style={{ letterSpacing: "-0.025em" }}>
-            Live results.<br />
-            <span style={{ color: "#60a5fa" }}>Real factories.</span> Real numbers.
+          <h2
+            style={{
+              fontFamily:    "'Inter', system-ui, -apple-system, sans-serif",
+              fontWeight:    900,
+              textTransform: "uppercase",
+              lineHeight:    0.95,
+              color:         "#1a2236",
+              letterSpacing: "-0.02em",
+              textShadow:    "0 0 40px rgba(98,170,222,0.1), 0 0 10px rgba(22,55,145,0.05)",
+            }}
+            className="mb-8"
+          >
+            <span style={{ display: "block", fontSize: "clamp(2rem, 6vw, 5.5rem)" }}>
+              Live results.
+            </span>
+            <span style={{ display: "block", fontSize: "clamp(2rem, 6vw, 5.5rem)", letterSpacing: "0.02em" }}>
+              <span style={{ color: "#163791" }}>Real factories.</span> Real numbers.
+            </span>
           </h2>
-          <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <p className="text-base max-w-xl mx-auto leading-relaxed text-[rgba(30,40,80,0.65)]">
             Every number below comes from a live Autonex deployment.<br />
             Real clients. Real shop floors. Measured from day one.
           </p>
@@ -200,11 +216,9 @@ export default function ProofSection() {
             <div key={i} className="proof-card-wrap">
               <div
                 ref={el => { cardRefs.current[i] = el; }}
-                className="proof-card relative rounded-2xl overflow-hidden flex flex-col h-full"
+                className="proof-card relative rounded-2xl overflow-hidden flex flex-col h-full shadow-xl shadow-[rgba(22,55,145,0.05)] bg-white"
                 style={{
-                  background:     `linear-gradient(145deg, ${r.color}0e 0%, rgba(9,16,40,0.9) 100%)`,
-                  border:         `1px solid ${r.color}30`,
-                  backdropFilter: "blur(16px)",
+                  border:         `1px solid rgba(22,55,145,0.1)`,
                   minHeight:      320,
                   padding:        "28px 24px",
                 }}
@@ -245,7 +259,7 @@ export default function ProofSection() {
                     >
                       {r.product}
                     </span>
-                    <span className="text-[11px] tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    <span className="text-[11px] tracking-widest uppercase text-[rgba(30,40,80,0.5)]">
                       {r.industry}
                     </span>
                   </div>
@@ -263,8 +277,7 @@ export default function ProofSection() {
 
                   {/* Label */}
                   <div
-                    className="text-sm font-bold uppercase tracking-[0.15em] mb-5"
-                    style={{ color: "rgba(255,255,255,0.6)" }}
+                    className="text-sm font-bold uppercase tracking-[0.15em] mb-5 text-[rgba(30,40,80,0.7)]"
                   >
                     {r.label}
                   </div>
@@ -274,7 +287,7 @@ export default function ProofSection() {
                     style={{ background: `linear-gradient(to right, ${r.color}40, transparent)` }} />
 
                   {/* Description */}
-                  <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+                  <p className="text-sm leading-relaxed flex-1 text-[rgba(30,40,80,0.65)]">
                     {r.description}
                   </p>
 

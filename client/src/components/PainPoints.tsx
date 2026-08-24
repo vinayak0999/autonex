@@ -168,28 +168,22 @@ export default function PainPoints() {
     <section
       id="pain-points"
       ref={sectionRef}
-      className="relative text-white"
+      className="relative text-[#1a2236]"
       style={{ background: "transparent" }}
     >
       {/* ── Header ──────────────────────────────────────────────────────────── */}
       <div className="w-full text-center pt-32 pb-16 px-4">
         {/* Aurora badge */}
-        <div className="relative inline-flex items-center justify-center p-[1.5px] mb-8 overflow-hidden rounded-full">
-          <div className="absolute top-1/2 left-1/2 w-[200%] h-[400%]" style={{ background: "conic-gradient(from 0deg at 50% 50%, rgba(98,170,222,0.6), rgba(22,55,145,0.2), rgba(98,170,222,0.6))", animation: "rotateAurora 4s linear infinite" }} />
-          <div className="relative flex items-center px-5 py-2.5 rounded-full" style={{ background: "rgba(6,13,31,0.9)", backdropFilter: "blur(12px)" }}>
-            <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#62AADE" }} />
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white">Start Where It Hurts</span>
+        <div className="relative inline-flex items-center justify-center p-[1px] mb-8 overflow-hidden rounded-full border border-[rgba(22,55,145,0.1)] shadow-sm bg-white">
+          <div className="relative flex items-center px-5 py-2.5 rounded-full bg-white">
+            <Sparkles className="w-3.5 h-3.5 mr-2" style={{ color: "#163791" }} />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#1a2236]">Start Where It Hurts</span>
           </div>
         </div>
 
-        {/* Headline — brand blue gradient */}
-        <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-[1.05]">
+        <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-[1.05] text-[#1a2236]">
           Identify the Friction.<br />
-          <span style={{
-            background: "linear-gradient(135deg, #1a4fa8 0%, #2560c8 40%, #4a8fd4 75%, #62AADE 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}>
+          <span className="bg-gradient-to-br from-[#163791] to-[#62AADE] bg-clip-text text-transparent">
             Deploy the Solution.
           </span>
         </h2>
@@ -206,14 +200,7 @@ export default function PainPoints() {
               className="lg:sticky top-0 min-h-[auto] lg:h-screen w-full flex items-center justify-center p-4 md:p-8 origin-top"
             >
               <div
-                className="relative w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 rounded-[2rem] overflow-visible lg:overflow-hidden"
-                style={{
-                  background: "rgba(6,13,31,0.92)",
-                  border: `1px solid ${step.solution.color}25`,
-                  // Remove backdropFilter on mobile — large sticky cards with blur = GPU overload
-                  ...(isMobile ? {} : { backdropFilter: "blur(20px)" }),
-                  boxShadow: `0 30px 60px rgba(0,0,0,0.65), 0 0 80px ${step.solution.color}12`,
-                }}
+                className="relative w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 rounded-[2rem] overflow-visible lg:overflow-hidden bg-white shadow-xl shadow-[rgba(22,55,145,0.05)] border border-[rgba(22,55,145,0.1)]"
               >
                 {/* Ambient glow */}
                 <div
@@ -231,8 +218,7 @@ export default function PainPoints() {
                 />
 
                 <div
-                  className="relative p-6 md:p-14 flex flex-col justify-center"
-                  style={{ borderRight: "1px solid rgba(255,255,255,0.07)" }}
+                  className="relative p-6 md:p-14 flex flex-col justify-center border-r-0 lg:border-r border-[rgba(22,55,145,0.1)]"
                 >
                   {/* Watermark step number */}
                   <div
@@ -259,14 +245,13 @@ export default function PainPoints() {
                     </div>
 
                     <h3
-                      className="reveal-element text-3xl md:text-4xl font-black text-white mb-5 leading-tight"
+                      className="reveal-element text-3xl md:text-4xl font-black text-[#1a2236] mb-5 leading-tight"
                       style={{ letterSpacing: "-0.02em" }}
                     >
                       {step.problem.headline}
                     </h3>
                     <p
-                      className="reveal-element text-base leading-relaxed mb-12 max-w-md"
-                      style={{ color: "rgba(255,255,255,0.45)" }}
+                      className="reveal-element text-base leading-relaxed mb-12 max-w-md text-[rgba(30,40,80,0.6)]"
                     >
                       {step.problem.pain}
                     </p>
@@ -280,8 +265,7 @@ export default function PainPoints() {
                         {step.problem.stat}
                       </div>
                       <div
-                        className="text-sm font-bold uppercase tracking-wider max-w-[220px]"
-                        style={{ color: "rgba(255,255,255,0.38)" }}
+                        className="text-sm font-bold uppercase tracking-wider max-w-[220px] text-[rgba(30,40,80,0.5)]"
                       >
                         {step.problem.statLabel}
                       </div>
@@ -289,7 +273,7 @@ export default function PainPoints() {
                   </div>
                 </div>
 
-                <div className="relative p-6 md:p-14 flex flex-col justify-center border-t border-white/5 lg:border-t-0">
+                <div className="relative p-6 md:p-14 flex flex-col justify-center border-t border-[rgba(22,55,145,0.1)] lg:border-t-0">
                   <div className="relative z-10">
 
                     {/* Solution header */}
@@ -306,7 +290,7 @@ export default function PainPoints() {
                           <Icon className="w-6 h-6" />
                         </div>
                         <h4
-                          className="text-2xl md:text-3xl font-black text-white"
+                          className="text-2xl md:text-3xl font-black text-[#1a2236]"
                           style={{ letterSpacing: "-0.01em" }}
                         >
                           {step.solution.name}
@@ -326,11 +310,7 @@ export default function PainPoints() {
 
                     {/* Tagline */}
                     <p
-                      className="reveal-element text-sm font-mono tracking-wide mb-8 pb-6"
-                      style={{
-                        color: "rgba(255,255,255,0.35)",
-                        borderBottom: "1px solid rgba(255,255,255,0.07)",
-                      }}
+                      className="reveal-element text-sm font-mono tracking-wide mb-8 pb-6 border-b border-[rgba(22,55,145,0.1)] text-[rgba(30,40,80,0.5)]"
                     >
                       {step.solution.tagline}
                     </p>
@@ -345,20 +325,15 @@ export default function PainPoints() {
                           >
                             <CheckCircle2 className="w-3.5 h-3.5" style={{ color: step.solution.color }} />
                           </div>
-                          <span className="text-base leading-snug" style={{ color: "rgba(255,255,255,0.72)" }}>
+                          <span className="text-base leading-snug text-[rgba(30,40,80,0.75)]">
                             {win}
                           </span>
                         </li>
                       ))}
                     </ul>
 
-                    {/* Proof box */}
                     <div
-                      className="reveal-element relative overflow-hidden rounded-2xl p-5"
-                      style={{
-                        background: `linear-gradient(135deg, ${step.solution.color}0e, rgba(6,13,31,0.8))`,
-                        border: `1px solid ${step.solution.color}30`,
-                      }}
+                      className="reveal-element relative overflow-hidden rounded-2xl p-5 border border-[rgba(22,55,145,0.1)] bg-slate-50"
                     >
                       <div
                         className="absolute left-0 top-0 bottom-0 w-[3px]"
@@ -371,8 +346,7 @@ export default function PainPoints() {
                         <ChevronRight className="w-3 h-3" /> Verified Impact
                       </div>
                       <div
-                        className="text-base font-semibold pl-4"
-                        style={{ color: "rgba(255,255,255,0.85)" }}
+                        className="text-base font-semibold pl-4 text-[#1a2236]"
                       >
                         {step.solution.proof}
                       </div>

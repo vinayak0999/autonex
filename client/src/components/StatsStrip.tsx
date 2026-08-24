@@ -80,35 +80,33 @@ export default function StatsStrip() {
   return (
     <section ref={sectionRef} className="relative py-12 md:py-16 overflow-hidden">
       {/* Separator lines */}
-      <div ref={lineTopRef} className="absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(98,170,222,0.3), transparent)" }} />
-      <div ref={lineBotRef} className="absolute inset-x-0 bottom-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(98,170,222,0.3), transparent)" }} />
+      <div ref={lineTopRef} className="absolute inset-x-0 top-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(22,55,145,0.15), transparent)" }} />
+      <div ref={lineBotRef} className="absolute inset-x-0 bottom-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(22,55,145,0.15), transparent)" }} />
 
       {/* Ambient glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, transparent, rgba(22,55,145,0.06), transparent)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(to right, transparent, rgba(98,170,222,0.03), transparent)" }} />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[rgba(98,170,222,0.1)]">
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[rgba(22,55,145,0.1)]">
           {stats.map((stat, i) => (
             <div
               key={i}
               className="stat-item flex flex-col items-center text-center px-6 py-4 group"
             >
               <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2 leading-none">
-                <span className="stat-prefix text-[rgba(255,255,255,0.45)] text-2xl md:text-3xl font-semibold">{stat.prefix}</span>
+                <span className="stat-prefix text-[rgba(30,40,80,0.6)] text-2xl md:text-3xl font-semibold">{stat.prefix}</span>
                 <span
-                  className="stat-num"
-                  style={{ background: "linear-gradient(135deg,#fff 0%,#62AADE 60%,#163791 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                  className="stat-num bg-gradient-to-br from-[#163791] to-[#62AADE] bg-clip-text text-transparent"
                 >
                   0
                 </span>
                 <span
-                  className="stat-suffix"
-                  style={{ background: "linear-gradient(135deg,#62AADE 0%,#163791 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                  className="stat-suffix bg-gradient-to-br from-[#163791] to-[#62AADE] bg-clip-text text-transparent"
                 >
                   {stat.suffix}
                 </span>
               </div>
-              <p className="stat-label text-sm md:text-base font-medium leading-snug max-w-[160px]" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <p className="stat-label text-sm md:text-base font-medium leading-snug max-w-[160px]" style={{ color: "rgba(30,40,80,0.7)" }}>
                 {stat.label}
               </p>
             </div>
