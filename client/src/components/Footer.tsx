@@ -29,184 +29,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
     window.location.href = `/#${sectionId}`;
   };
 
-  // Particle animation effect
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let lastFrameTime = 0;
-    let particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-      type: 'electron' | 'proton';
-      charge: number;
-      trail: Array<{ x: number, y: number }>;
-    }> = [];
-
-    const isMobile = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-
-    const initParticles = () => {
-      const rect = canvas.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-      const effectiveDpr = isMobile ? Math.min(1.5, dpr) : dpr;
-      canvas.width = Math.floor(rect.width * effectiveDpr);
-      canvas.height = Math.floor(rect.height * effectiveDpr);
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(effectiveDpr, effectiveDpr);
-
-      particles = [];
-      const densityDivisor = isMobile ? 30000 : 15000;
-      const particleCount = Math.min(600, Math.floor((rect.width * rect.height) / densityDivisor));
-
-      for (let i = 0; i < particleCount; i++) {
-        const type = Math.random() > 0.5 ? 'electron' : 'proton';
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          radius: type === 'electron' ? 1.5 : 2.5,
-          type,
-          charge: type === 'electron' ? -1 : 1,
-          trail: []
-        });
-      }
-    };
-
-    const updateParticles = () => {
-      particles.forEach(particle => {
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        // Bounce off edges
-        if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
-        if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
-
-        // Keep particles in bounds
-        particle.x = Math.max(0, Math.min(canvas.width, particle.x));
-        particle.y = Math.max(0, Math.min(canvas.height, particle.y));
-
-        // Add to trail
-        particle.trail.push({ x: particle.x, y: particle.y });
-        if (particle.trail.length > 8) particle.trail.shift();
-
-        // Apply electromagnetic forces (skip on mobile to avoid O(n^2))
-        if (!isMobile) {
-          for (let i = 0; i < particles.length; i += 2) {
-            const other = particles[i];
-            if (particle === other) continue;
-            const dx = other.x - particle.x;
-            const dy = other.y - particle.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance > 0 && distance < 100) {
-              const force = (particle.charge * other.charge) / (distance * distance) * 0.001;
-              const fx = (dx / distance) * force;
-              const fy = (dy / distance) * force;
-              particle.vx += fx;
-              particle.vy += fy;
-            }
-          }
-        }
-
-        // Damping
-        particle.vx *= 0.99;
-        particle.vy *= 0.99;
-      });
-    };
-
-    const drawParticles = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach(particle => {
-        // Draw trail
-        if (particle.trail.length > 1) {
-          ctx.strokeStyle = particle.type === 'electron'
-            ? `rgba(22, 55, 145, ${0.3})`
-            : `rgba(15, 42, 107, ${0.3})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(particle.trail[0].x, particle.trail[0].y);
-          for (let i = 1; i < particle.trail.length; i++) {
-            ctx.lineTo(particle.trail[i].x, particle.trail[i].y);
-          }
-          ctx.stroke();
-        }
-
-        // Draw particle
-        const gradient = ctx.createRadialGradient(
-          particle.x, particle.y, 0,
-          particle.x, particle.y, particle.radius * 3
-        );
-
-        if (particle.type === 'electron') {
-          gradient.addColorStop(0, 'rgba(22, 55, 145, 0.8)');
-          gradient.addColorStop(1, 'rgba(22, 55, 145, 0)');
-        } else {
-          gradient.addColorStop(0, 'rgba(15, 42, 107, 0.8)');
-          gradient.addColorStop(1, 'rgba(15, 42, 107, 0)');
-        }
-
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius * 3, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Draw core
-        ctx.fillStyle = particle.type === 'electron' ? '#163791' : '#0f2a6b';
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
-    };
-
-    let running = true;
-    const animate = (ts?: number) => {
-      if (!running) { animationFrameId = requestAnimationFrame(animate); return; }
-      // Throttle to ~30fps on mobile
-      if (isMobile && ts !== undefined) {
-        if (ts - lastFrameTime < 33) {
-          animationFrameId = requestAnimationFrame(animate);
-          return;
-        }
-        lastFrameTime = ts;
-      }
-      updateParticles();
-      drawParticles();
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    initParticles();
-    animate();
-
-    const handleResize = () => {
-      initParticles();
-    };
-    const handleVisibility = () => {
-      running = document.visibilityState === 'visible';
-      if (running) {
-        lastFrameTime = 0;
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    document.addEventListener('visibilitychange', handleVisibility);
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', handleResize);
-      document.removeEventListener('visibilitychange', handleVisibility);
-    };
-  }, []);
 
   // Footer hero copy (page-specific overrides)
   const titleText = isAbout
@@ -239,12 +62,7 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
         }
       `}</style>
       <footer className="relative w-full">
-        {/* Particle canvas */}
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full z-0 pointer-events-none"
-          style={{ background: 'transparent' }}
-        />
+
 
         {/* ── CTA — LET'S GET STARTED TOGETHER ─────────────────────────── */}
         {!hideCta && (
@@ -299,32 +117,28 @@ export default function Footer({ hideCta = false }: { hideCta?: boolean }) {
                     gap:            "0.65rem",
                     padding:        "0.85rem 2.4rem",
                     borderRadius:   999,
-                    background:     "rgba(8,14,35,0.85)",
-                    border:         "1px solid rgba(98,170,222,0.25)",
-                    color:          "rgba(255,255,255,0.88)",
+                    background:     "#163791",
+                    border:         "1px solid transparent",
+                    color:          "#ffffff",
                     fontFamily:     "inherit",
-                    fontWeight:     700,
+                    fontWeight:     600,
                     fontSize:       "0.72rem",
                     letterSpacing:  "0.22em",
                     textTransform:  "uppercase",
                     textDecoration: "none",
                     cursor:         "pointer",
-                    backdropFilter: "blur(14px)",
-                    WebkitBackdropFilter: "blur(14px)",
-                    boxShadow:      "0 4px 32px rgba(0,0,0,0.5), 0 0 20px rgba(22,55,145,0.2), inset 0 1px 0 rgba(98,170,222,0.08)",
+                    boxShadow:      "0 4px 15px rgba(22,55,145,0.3)",
                     transition:     "all 0.25s ease",
                   }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(22,55,145,0.4)";
-                    (e.currentTarget as HTMLAnchorElement).style.border = "1px solid rgba(98,170,222,0.5)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "#1a4fa8";
                     (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.04)";
-                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 40px rgba(0,0,0,0.5), 0 0 30px rgba(22,55,145,0.4)";
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 25px rgba(22,55,145,0.4)";
                   }}
                   onMouseLeave={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(8,14,35,0.85)";
-                    (e.currentTarget as HTMLAnchorElement).style.border = "1px solid rgba(98,170,222,0.25)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "#163791";
                     (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
-                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 32px rgba(0,0,0,0.5), 0 0 20px rgba(22,55,145,0.2), inset 0 1px 0 rgba(98,170,222,0.08)";
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 15px rgba(22,55,145,0.3)";
                   }}
                 >
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.7 }}>
